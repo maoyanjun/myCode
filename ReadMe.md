@@ -1,20 +1,16 @@
-copy right 
-4/10/2018 10:41:11 AM 
-Author:maoyanjun
-Chinese name:毛艳军
-Email: maoyanjun_dut@foxmail.com 
-License:
-    This file is part of OpenFOAM.
-
-    OpenFOAM is free software: you can redistribute it and/or modify it
-    under the terms of the GNU General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
-
-    OpenFOAM is distributed in the hope that it will be useful, but WITHOUT
-    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
-    FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License
-    for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with OpenFOAM.  If not, see <http://www.gnu.org/licenses/>.
+<<<<<<< HEAD
+Git is a distibuted version control system
+Git is a free software distributed under the GPL
+Git is a mutable index called stage.
+Git has a mutable index called stage
+Git tracks changes of files.
+<<<<<<< HEAD
+Creating a new branch is quick and simple.
+=======
+Creating a new branch is quick
+Creating a new branch is quick and simple.
+>>>>>>> feature1
+=======
+# OpenFOAM
+用于个人openfoam代码开发
+>>>>>>> a2e3147e09ca625eaf8e0a79495231aa509d621d
