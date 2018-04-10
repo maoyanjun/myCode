@@ -1,0 +1,8 @@
+#!/bin/sh
+cd Data/ProbeVOF
+rm ProbeVOF1
+rm ProbeVOF2
+rm ProbeVOF7
+cd ../../
+python reflection.py
+

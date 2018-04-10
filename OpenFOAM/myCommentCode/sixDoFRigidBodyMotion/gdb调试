@@ -1,0 +1,703 @@
+(gdb) run
+Starting program: /home/shzx/OpenFOAM/OpenFOAM-4.0/platforms/linux64GccDPInt64Debug/bin/interDyMFoam
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : 4.0
+Exec   : /home/shzx/OpenFOAM/OpenFOAM-4.0/platforms/linux64GccDPInt64Debug/bin/interDyMFoam
+Date   : Dec 14 2017
+Time   : 14:43:05
+Host   : "T630"
+PID    : 91388
+Case   : /home/shzx/OpenFOAM/OpenFOAM-4.0/tutorials/multiphase/interDyMFoam/ras/floatingObject
+nProcs : 1
+sigFpe : Enabling floating point exception trapping (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Using #calcEntry at line 50 in file "/home/shzx/OpenFOAM/OpenFOAM-4.0/tutorials/multiphase/interDyMFoam/ras/floatingObject/constant/dynamicMeshDict.rigidBodyMotionCoeffs.bodies.floatingObject"
+Using #codeStream with "/home/shzx/OpenFOAM/OpenFOAM-4.0/tutorials/multiphase/interDyMFoam/ras/floatingObject/dynamicCode/platforms/linux64GccDPInt64Debug/lib/libcodeStream_23afbdb49efd3f7748d81ebd6df2c1cbbcaeaa5e.so"
+Selecting dynamicFvMesh dynamicMotionSolverFvMesh
+Using #calcEntry at line 50 in file "/home/shzx/OpenFOAM/OpenFOAM-4.0/tutorials/multiphase/interDyMFoam/ras/floatingObject/constant/dynamicMeshDict.rigidBodyMotionCoeffs.bodies.floatingObject"
+Selecting motion solver: rigidBodyMotion
+Using #calcEntry at line 50 in file "/home/shzx/OpenFOAM/OpenFOAM-4.0/tutorials/multiphase/interDyMFoam/ras/floatingObject/constant/dynamicMeshDict.rigidBodyMotionCoeffs.bodies.floatingObject"
+Selecting rigidBodySolver Newmark
+
+PIMPLE: no residual control data found. Calculations will employ 3 corrector loops
+
+Reading field p_rgh
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Reading transportProperties
+
+Selecting incompressible transport model Newtonian
+Selecting incompressible transport model Newtonian
+Selecting turbulence model type RAS
+Selecting RAS turbulence model kEpsilon
+kEpsilonCoeffs
+{
+    Cmu             0.09;
+    C1              1.44;
+    C2              1.92;
+    C3              -0.33;
+    sigmak          1;
+    sigmaEps        1.3;
+}
+
+
+Reading g
+
+Reading hRef
+Calculating field g.h
+
+No MRF models present
+
+No finite volume options present
+
+GAMGPCG:  Solving for pcorr, Initial residual = 0, Final residual = 0, No Iterations 0
+time step continuity errors : sum local = 0, global = 0, cumulative = 0
+Reading/calculating face velocity Uf
+
+Courant Number mean: 0 max: 0
+
+Starting time loop
+
+Courant Number mean: 0 max: 0
+Interface Courant Number mean: 0 max: 0
+deltaT = 0.0111111111111
+Time = 0.0111111
+
+PIMPLE: iteration 1
+
+Breakpoint 1, main (argc=1, argv=0x7fffffffd4a8) at interDyMFoam.C:119
+119                     scalar timeBeforeMeshUpdate = runTime.elapsedCpuTime();
+(gdb) s
+Foam::cpuTime::elapsedCpuTime (this=0x7fffffffafa8) at cpuTime/cpuTime.C:69
+69          getTime(newTime_);
+(gdb) s
+Foam::cpuTime::getTime (t=...) at cpuTime/cpuTime.C:38
+38          times(&t);
+(gdb) s
+__times (buf=0x7fffffffafe8) at ../sysdeps/unix/sysv/linux/times.c:27
+27      ../sysdeps/unix/sysv/linux/times.c: No such file or directory.
+(gdb) s
+29      in ../sysdeps/unix/sysv/linux/times.c
+(gdb) s
+55      in ../sysdeps/unix/sysv/linux/times.c
+(gdb) s
+Foam::cpuTime::getTime (t=...) at cpuTime/cpuTime.C:39
+39      }
+(gdb) s
+Foam::cpuTime::elapsedCpuTime (this=0x7fffffffafa8) at cpuTime/cpuTime.C:70
+70          return timeDifference(startTime_, newTime_);
+(gdb) s
+Foam::cpuTime::timeDifference (beg=..., end=...) at cpuTime/cpuTime.C:48
+48                  (end.tms_utime + end.tms_stime)
+(gdb) s
+49                - (beg.tms_utime + beg.tms_stime)
+(gdb) s
+50              )/Hz_
+(gdb) s
+51          );
+(gdb) s
+52      }
+(gdb) s
+Foam::cpuTime::elapsedCpuTime (this=0x7fffffffafa8) at cpuTime/cpuTime.C:71
+71      }
+(gdb) s
+main (argc=1, argv=0x7fffffffd4a8) at interDyMFoam.C:121
+121                     mesh.update();
+(gdb) s
+Foam::dynamicMotionSolverFvMesh::update (this=0x9b4380)
+    at dynamicMotionSolverFvMesh/dynamicMotionSolverFvMesh.C:63
+63      {
+(gdb) s
+64          fvMesh::movePoints(motionPtr_->newPoints());
+(gdb) s
+Foam::autoPtr<Foam::motionSolver>::operator-> (this=0x9b5df0)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/autoPtrI.H:172
+172     inline T* Foam::autoPtr<T>::operator->()
+(gdb) s
+174         if (!ptr_)
+(gdb) s
+182         return ptr_;
+(gdb) s
+183     }
+(gdb) s
+Foam::motionSolver::newPoints (this=0xb9b830)
+    at motionSolver/motionSolver/motionSolver.C:162
+162     {
+(gdb) s
+163         solve();
+(gdb) s
+Foam::rigidBodyMeshMotion::solve (this=0xb9b830) at rigidBodyMeshMotion.C:205
+205     {
+(gdb) s
+206         const Time& t = mesh().time();
+(gdb) s
+Foam::motionSolver::mesh (this=0xb9b830) at lnInclude/motionSolver.H:126
+126                 return mesh_;
+(gdb) s
+127             }
+(gdb) s
+Foam::objectRegistry::time (this=0x9b4380)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/objectRegistry.H:120
+120                     return time_;
+(gdb) s
+121                 }
+(gdb) s
+Foam::rigidBodyMeshMotion::solve (this=0xb9b830) at rigidBodyMeshMotion.C:208
+208         if (mesh().nPoints() != points0().size())
+(gdb) s
+Foam::motionSolver::mesh (this=0xb9b830) at lnInclude/motionSolver.H:126
+126                 return mesh_;
+(gdb) s
+127             }
+(gdb) s
+Foam::primitiveMesh::nPoints (this=0x9b44b0)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/primitiveMeshI.H:43
+43          return nPoints_;
+(gdb) s
+44      }
+(gdb) s
+Foam::displacementMotionSolver::points0 (this=0xb9b830)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/dynamicMesh/lnInclude/displacementMotionSolver.H:113
+113                 return points0_;
+(gdb) s
+114             }
+(gdb) s
+Foam::List<Foam::Vector<double> >::size (this=0xb9bc90)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/ListI.H:85
+85          return UList<T>::size_;
+(gdb) s
+86      }
+(gdb) s
+Foam::rigidBodyMeshMotion::solve (this=0xb9b830) at rigidBodyMeshMotion.C:218
+218         if (curTimeIndex_ != this->db().time().timeIndex())
+(gdb) s
+Foam::IOobject::db (this=0xb9b830) at db/IOobject/IOobject.C:223
+223         return db_;
+(gdb) s
+224     }
+(gdb) s
+Foam::objectRegistry::time (this=0x9b4380)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/objectRegistry.H:120
+120                     return time_;
+(gdb) s
+121                 }
+(gdb) s
+Foam::TimeState::timeIndex (this=0x7fffffffb0b0)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/TimeStateI.H:37
+37          return timeIndex_;
+(gdb) s
+38      }
+(gdb) s
+Foam::rigidBodyMeshMotion::solve (this=0xb9b830) at rigidBodyMeshMotion.C:220
+220             model_.newTime();
+(gdb) s
+Foam::RBD::rigidBodyMotion::newTime (this=0xb9bca0)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/rigidBodyDynamics/lnInclude/rigidBodyMotionI.H:50
+50          motionState0_ = motionState_;
+(gdb) s
+Foam::RBD::rigidBodyModelState::operator= (this=0xb9bee0)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/rigidBodyDynamics/lnInclude/rigidBodyModelState.H:66
+66      class rigidBodyModelState
+(gdb) s
+Foam::Field<double>::operator= (this=0xb9bee0, rhs=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/Field.C:757
+757     void Foam::Field<Type>::operator=(const Field<Type>& rhs)
+(gdb) s
+759         if (this == &rhs)
+(gdb) s
+766         List<Type>::operator=(rhs);
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bee8, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:430
+430     void Foam::List<T>::operator=(const List<T>& a)
+(gdb) s
+432         if (this == &a)
+(gdb) s
+439         operator=(static_cast<const UList<T>&>(a));
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bee8, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:401
+401         if (a.size_ != this->size_)
+(gdb) s
+409         if (this->size_)
+(gdb) s
+419                 List_ACCESS(T, (*this), vp);
+(gdb) s
+Foam::UList<double>::begin (this=0xb9bee8)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UListI.H:218
+218         return v_;
+(gdb) s
+219     }
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bee8, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:420
+420                 List_CONST_ACCESS(T, a, ap);
+(gdb) s
+Foam::UList<double>::begin (this=0xb9be98)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UListI.H:225
+225         return v_;
+(gdb) s
+226     }
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bee8, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:421
+421                 List_FOR_ALL((*this), i)
+(gdb) s
+Foam::List<double>::size (this=0xb9bee8)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/ListI.H:85
+85          return UList<T>::size_;
+(gdb) s
+86      }
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bee8, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:422
+422                     List_ELEM((*this), vp, i) = List_ELEM(a, ap, i);
+(gdb) s
+421                 List_FOR_ALL((*this), i)
+(gdb) s
+422                     List_ELEM((*this), vp, i) = List_ELEM(a, ap, i);
+(gdb) s
+421                 List_FOR_ALL((*this), i)
+(gdb) s
+426     }
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bee8, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:440
+440     }
+(gdb) s
+Foam::Field<double>::operator= (this=0xb9bee0, rhs=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/Field.C:767
+767     }
+(gdb) s
+Foam::Field<double>::operator= (this=0xb9bef8, rhs=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/Field.C:757
+757     void Foam::Field<Type>::operator=(const Field<Type>& rhs)
+(gdb) s
+759         if (this == &rhs)
+(gdb) s
+766         List<Type>::operator=(rhs);
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bf00, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:430
+430     void Foam::List<T>::operator=(const List<T>& a)
+(gdb) s
+432         if (this == &a)
+(gdb) s
+439         operator=(static_cast<const UList<T>&>(a));
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bf00, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:401
+401         if (a.size_ != this->size_)
+(gdb) s
+409         if (this->size_)
+(gdb) s
+419                 List_ACCESS(T, (*this), vp);
+(gdb) s
+Foam::UList<double>::begin (this=0xb9bf00)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UListI.H:218
+218         return v_;
+(gdb) s
+219     }
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bf00, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:420
+420                 List_CONST_ACCESS(T, a, ap);
+(gdb) s
+Foam::UList<double>::begin (this=0xb9beb0)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UListI.H:225
+225         return v_;
+(gdb) s
+226     }
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bf00, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:421
+421                 List_FOR_ALL((*this), i)
+(gdb) s
+Foam::List<double>::size (this=0xb9bf00)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/ListI.H:85
+85          return UList<T>::size_;
+(gdb) s
+86      }
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bf00, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:422
+422                     List_ELEM((*this), vp, i) = List_ELEM(a, ap, i);
+(gdb) s
+421                 List_FOR_ALL((*this), i)
+(gdb) s
+422                     List_ELEM((*this), vp, i) = List_ELEM(a, ap, i);
+(gdb) s
+421                 List_FOR_ALL((*this), i)
+(gdb) s
+426     }
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bf00, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:440
+440     }
+(gdb) s
+Foam::Field<double>::operator= (this=0xb9bef8, rhs=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/Field.C:767
+767     }
+(gdb) s
+Foam::Field<double>::operator= (this=0xb9bf10, rhs=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/Field.C:757
+757     void Foam::Field<Type>::operator=(const Field<Type>& rhs)
+(gdb) s
+759         if (this == &rhs)
+(gdb) s
+766         List<Type>::operator=(rhs);
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bf18, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:430
+430     void Foam::List<T>::operator=(const List<T>& a)
+(gdb) s
+432         if (this == &a)
+(gdb) s
+439         operator=(static_cast<const UList<T>&>(a));
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bf18, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:401
+401         if (a.size_ != this->size_)
+(gdb) s
+409         if (this->size_)
+(gdb) s
+419                 List_ACCESS(T, (*this), vp);
+(gdb) s
+Foam::UList<double>::begin (this=0xb9bf18)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UListI.H:218
+218         return v_;
+(gdb) s
+219     }
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bf18, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:420
+420                 List_CONST_ACCESS(T, a, ap);
+(gdb) s
+Foam::UList<double>::begin (this=0xb9bec8)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UListI.H:225
+225         return v_;
+(gdb) s
+226     }
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bf18, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:421
+421                 List_FOR_ALL((*this), i)
+(gdb) s
+Foam::List<double>::size (this=0xb9bf18)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/ListI.H:85
+85          return UList<T>::size_;
+(gdb) s
+86      }
+(gdb) s
+Foam::List<double>::operator= (this=0xb9bf18, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:422
+422                     List_ELEM((*this), vp, i) = List_ELEM(a, ap, i);
+(gdb) s
+421                 List_FOR_ALL((*this), i)
+(gdb) s
+422                     List_ELEM((*this), vp, i) = List_ELEM(a, ap, i);
+(gdb) n
+421                 List_FOR_ALL((*this), i)
+(gdb) n
+426     }
+(gdb) n
+Foam::List<double>::operator= (this=0xb9bf18, a=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/List.C:440
+440     }
+(gdb) n
+Foam::Field<double>::operator= (this=0xb9bf10, rhs=...)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/Field.C:767
+767     }
+(gdb) n
+Foam::RBD::rigidBodyMotion::newTime (this=0xb9bca0)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/rigidBodyDynamics/lnInclude/rigidBodyMotionI.H:51
+51      }
+(gdb) n
+Foam::rigidBodyMeshMotion::solve (this=0xb9b830) at rigidBodyMeshMotion.C:221
+221             curTimeIndex_ = this->db().time().timeIndex();
+(gdb) n
+224         if (db().foundObject<uniformDimensionedVectorField>("g"))
+(gdb) n
+227                 db().lookupObject<uniformDimensionedVectorField>("g").value();
+(gdb) n
+226             model_.g() =
+(gdb) n
+227                 db().lookupObject<uniformDimensionedVectorField>("g").value();
+(gdb) n
+230         if (test_)
+(gdb) n
+246             Field<spatialVector> fx(model_.nBodies(), Zero);
+(gdb) n
+248             forAll(bodyMeshes_, bi)
+(gdb) n
+250                 const label bodyID = bodyMeshes_[bi].bodyID_;
+(gdb) n
+252                 dictionary forcesDict;
+(gdb) n
+253                 forcesDict.add("type", functionObjects::forces::typeName);
+(gdb) n
+254                 forcesDict.add("patches", bodyMeshes_[bi].patches_);
+(gdb) n
+255                 forcesDict.add("rhoInf", rhoInf_);
+(gdb) n
+256                 forcesDict.add("rho", rhoName_);
+(gdb) n
+257                 forcesDict.add("CofR", vector::zero);
+(gdb) n
+259                 functionObjects::forces f("forces", db(), forcesDict);
+(gdb) n
+forces forces:
+    Not including porosity effects
+260                 f.calcForcesMoment();
+(gdb) n
+262                 fx[bodyID] = spatialVector(f.momentEff(), f.forceEff());
+(gdb) s
+Foam::functionObjects::forces::forceEff (this=0x7fffffff5520)
+    at forces/forces.C:884
+884     {
+(gdb) s
+885         return sum(force_[0]) + sum(force_[1]) + sum(force_[2]);
+(gdb) s
+Foam::UList<Foam::Field<Foam::Vector<double> > >::operator[] (
+    this=0x7fffffff55a0, i=2)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UListI.H:199
+199         checkIndex(i);
+(gdb) s
+Foam::UList<Foam::Field<Foam::Vector<double> > >::checkIndex (
+    this=0x7fffffff55a0, i=2)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UListI.H:96
+96      inline void Foam::UList<T>::checkIndex(const label i) const
+(gdb) n
+98          if (!size_)
+(gdb) n
+104         else if (i<0 || i>=size_)
+(gdb) n
+110     }
+(gdb) n
+Foam::UList<Foam::Field<Foam::Vector<double> > >::operator[] (
+    this=0x7fffffff55a0, i=2)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UListI.H:201
+201         return v_[i];
+(gdb) n
+202     }
+(gdb) n
+Foam::functionObjects::forces::forceEff (this=0x7fffffff5520)
+    at forces/forces.C:886
+886     }
+(gdb) n
+Foam::rigidBodyMeshMotion::solve (this=0xb9b830) at rigidBodyMeshMotion.C:259
+259                 functionObjects::forces f("forces", db(), forcesDict);
+(gdb) n
+252                 dictionary forcesDict;
+(gdb) n
+248             forAll(bodyMeshes_, bi)
+(gdb) n
+266             (
+(gdb) n
+270             );
+(gdb) n
+266             (
+(gdb) n
+246             Field<spatialVector> fx(model_.nBodies(), Zero);
+(gdb) n
+273         if (Pstream::master() && model_.report())
+(gdb) n
+275             forAll(bodyMeshes_, bi)
+(gdb) n
+277                 model_.status(bodyMeshes_[bi].bodyID_);
+(gdb) n
+Rigid-body motion of the floatingObject
+    Centre of rotation: (0.5 0.45 0.1)
+    Orientation: (1 0 -5.633479613e-19 0 1 0 5.633479613e-19 0 1)
+    Linear velocity: (0 3.68339618066e-18 0)
+    Angular velocity: (0 1.01402633034e-16 0)
+275             forAll(bodyMeshes_, bi)
+(gdb) n
+282         if (bodyMeshes_.size() == 1)
+(gdb) s
+Foam::UPtrList<Foam::rigidBodyMeshMotion::bodyMesh>::size (this=0xb9bf60)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UPtrListI.H:31
+31          return ptrs_.size();
+(gdb) s
+Foam::List<Foam::rigidBodyMeshMotion::bodyMesh*>::size (this=0xb9bf60)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/ListI.H:85
+85          return UList<T>::size_;
+(gdb) s
+86      }
+(gdb) s
+Foam::UPtrList<Foam::rigidBodyMeshMotion::bodyMesh>::size (this=0xb9bf60)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UPtrListI.H:32
+32      }
+(gdb) s
+Foam::rigidBodyMeshMotion::solve (this=0xb9b830) at rigidBodyMeshMotion.C:289
+289             ) - points0();
+(gdb) s
+Foam::displacementMotionSolver::points0 (this=0xb9b830)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/dynamicMesh/lnInclude/displacementMotionSolver.H:113
+113                 return points0_;
+(gdb) s
+114             }
+(gdb) s
+Foam::rigidBodyMeshMotion::solve (this=0xb9b830) at rigidBodyMeshMotion.C:288
+288                 points0()
+(gdb) s
+Foam::displacementMotionSolver::points0 (this=0xb9b830)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/dynamicMesh/lnInclude/displacementMotionSolver.H:113
+113                 return points0_;
+(gdb) s
+114             }
+(gdb) s
+Foam::rigidBodyMeshMotion::solve (this=0xb9b830) at rigidBodyMeshMotion.C:287
+287                 bodyMeshes_[0].weight_,
+(gdb) s
+Foam::UPtrList<Foam::rigidBodyMeshMotion::bodyMesh>::operator[] (
+    this=0xb9bf60, i=0)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UPtrListI.H:119
+119     inline T& Foam::UPtrList<T>::operator[](const label i)
+(gdb) s
+121         if (!ptrs_[i])
+(gdb) s
+Foam::UList<Foam::rigidBodyMeshMotion::bodyMesh*>::operator[] (this=0xb9bf60,
+    i=0)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UListI.H:170
+170         checkIndex(i);
+(gdb) s
+Foam::UList<Foam::rigidBodyMeshMotion::bodyMesh*>::checkIndex (this=0xb9bf60,
+    i=0) at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UListI.H:96
+96      inline void Foam::UList<T>::checkIndex(const label i) const
+(gdb) s
+98          if (!size_)
+(gdb) n
+104         else if (i<0 || i>=size_)
+(gdb) n
+110     }
+(gdb) n
+Foam::UList<Foam::rigidBodyMeshMotion::bodyMesh*>::operator[] (this=0xb9bf60,
+    i=0)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UListI.H:172
+172         return v_[i];
+(gdb) n
+173     }
+(gdb) n
+Foam::UPtrList<Foam::rigidBodyMeshMotion::bodyMesh>::operator[] (
+    this=0xb9bf60, i=0)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/UPtrListI.H:130
+130         return *(ptrs_[i]);
+(gdb) n
+131     }
+(gdb) n
+Foam::rigidBodyMeshMotion::solve (this=0xb9b830) at rigidBodyMeshMotion.C:285
+285             (
+(gdb) n
+286                 bodyMeshes_[0].bodyID_,
+(gdb) n
+285             (
+(gdb) n
+289             ) - points0();
+(gdb) n
+284             pointDisplacement_.primitiveFieldRef() = model_.transformPoints
+(gdb) n
+289             ) - points0();
+(gdb) n
+285             (
+(gdb) n
+309         ).constrainDisplacement(pointDisplacement_);
+(gdb) n
+308             pointDisplacement_.mesh()
+(gdb) n
+309         ).constrainDisplacement(pointDisplacement_);
+(gdb) n
+310     }
+(gdb) n
+Foam::motionSolver::newPoints (this=0xb9b830)
+    at motionSolver/motionSolver/motionSolver.C:164
+164         return curPoints();
+(gdb) n
+165     }
+(gdb) n
+Foam::dynamicMotionSolverFvMesh::update (this=0x9b4380)
+    at dynamicMotionSolverFvMesh/dynamicMotionSolverFvMesh.C:66
+66          if (foundObject<volVectorField>("U"))
+(gdb) n
+69                  const_cast<volVectorField&>(lookupObject<volVectorField>("U"));
+(gdb) n
+70              U.correctBoundaryConditions();
+(gdb) n
+73          return true;
+(gdb) n
+74      }
+(gdb) n
+main (argc=1, argv=0x7fffffffd4a8) at interDyMFoam.C:123
+123                     if (mesh.changing())
+(gdb) s
+Foam::polyMesh::changing (this=0x9b4380)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/polyMesh.H:524
+524                     return moving()||topoChanging();
+(gdb) s
+Foam::polyMesh::moving (this=0x9b4380)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/polyMesh.H:496
+496                     return moving_;
+(gdb) s
+497                 }
+(gdb) s
+Foam::polyMesh::changing (this=0x9b4380)
+    at /home/shzx/OpenFOAM/OpenFOAM-4.0/src/OpenFOAM/lnInclude/polyMesh.H:525
+525                 }
+(gdb) s
+main (argc=1, argv=0x7fffffffd4a8) at interDyMFoam.C:126
+126                             << runTime.elapsedCpuTime() - timeBeforeMeshUpdate
+(gdb) s
+Foam::cpuTime::elapsedCpuTime (this=0x7fffffffafa8) at cpuTime/cpuTime.C:69
+69          getTime(newTime_);
+(gdb) s
+Foam::cpuTime::getTime (t=...) at cpuTime/cpuTime.C:38
+38          times(&t);
+(gdb) s
+__times (buf=0x7fffffffafe8) at ../sysdeps/unix/sysv/linux/times.c:27
+27      ../sysdeps/unix/sysv/linux/times.c: No such file or directory.
+(gdb) s
+29      in ../sysdeps/unix/sysv/linux/times.c
+(gdb) s
+55      in ../sysdeps/unix/sysv/linux/times.c
+(gdb) s
+Foam::cpuTime::getTime (t=...) at cpuTime/cpuTime.C:39
+39      }
+(gdb) s
+Foam::cpuTime::elapsedCpuTime (this=0x7fffffffafa8) at cpuTime/cpuTime.C:70
+70          return timeDifference(startTime_, newTime_);
+(gdb) s
+Foam::cpuTime::timeDifference (beg=..., end=...) at cpuTime/cpuTime.C:48
+48                  (end.tms_utime + end.tms_stime)
+(gdb) s
+49                - (beg.tms_utime + beg.tms_stime)
+(gdb) s
+50              )/Hz_
+(gdb) s
+51          );
+(gdb) s
+52      }
+(gdb) s
+Foam::cpuTime::elapsedCpuTime (this=0x7fffffffafa8) at cpuTime/cpuTime.C:71
+71      }
+(gdb) s
+main (argc=1, argv=0x7fffffffd4a8) at interDyMFoam.C:125
+125                         Info<< "Execution time for mesh.update() = "
+(gdb)

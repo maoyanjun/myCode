@@ -1,0 +1,140 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  2.1.1                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       pointVectorField;
+    location    "0.01";
+    object      pointDisplacement;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 0 0 0 0 0];
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    outlet
+    {
+        type            fixedValue; 
+        value           uniform (0 0 0);
+    }
+    frontAndBack
+    {
+        type            empty;
+    }
+    inlet
+    {
+        type            wavemakerMovement;
+        wavemakerDictName wavemakerMovementDict;
+        value           uniform (0 0 0);
+    }
+    bottom
+    {
+        type            fixedNormalSlip;
+        n               (0 0 1);
+        value           uniform (0 0 0);
+    }
+    atmosphere
+    {
+        type            fixedNormalSlip;
+        n               (0 0 1);
+        value           uniform (0 0 0);
+    }
+    floatingObject
+    {
+    	type	sixDoFRigidBodyDisplacement;
+      value uniform (0 0 0);
+      centreOfMass    (12.0 0.05 1.05);
+
+    // Cuboid dimensions
+    Lx              0.8;
+    Ly              0.1;
+    Lz              0.6;
+
+    // Density of the solid
+    rho             416.667;
+
+    // Cuboid mass
+    mass            #calc "$rho*$Lx*$Ly*$Lz";
+
+    // Cuboid moment of inertia about the centre of mass
+    momentOfInertia #codeStream
+    {
+        codeInclude
+        #{
+            #include "diagTensor.H"
+        #};
+
+        code
+        #{
+            scalar sqrLx = sqr($Lx);
+            scalar sqrLy = sqr($Ly);
+            scalar sqrLz = sqr($Lz);
+            os  <<
+                $mass
+               *diagTensor(sqrLy + sqrLz, sqrLx + sqrLz, sqrLx + sqrLy)/12.0;
+        #};
+    };
+
+    report          on;
+    accelerationRelaxation 0.7;
+
+    solver
+    {
+        type Newmark;
+    }
+
+    constraints
+    {
+        // fixedPoint
+        // {
+        //     sixDoFRigidBodyMotionConstraint point;
+        //     centreOfRotation (0.5 0.45 0.1);
+        // }
+
+        fixedLine
+        {
+           sixDoFRigidBodyMotionConstraint line;
+            centreOfRotation (12.0 0.05 1.05 );
+           direction (0 0 1);
+       }
+
+        fixedAxis
+        {
+            sixDoFRigidBodyMotionConstraint axis;
+            axis (0 0 1);
+        }
+        fixedAxis2
+        {
+            sixDoFRigidBodyMotionConstraint axis;
+            axis (1 0 0);
+        }
+     //   fixedPlane
+     //  {
+      //      sixDoFRigidBodyMotionConstraint plane;
+      //      centreOfRotation (8.0 0 0.05);
+       //     normal (0 1 0);
+       // }
+    }
+    restraints
+    {
+         HydraulicPTO
+        {
+            sixDoFRigidBodyMotionRestraint HydraulicPTO;
+           // coeff         25.641;
+           
+        }
+    }
+  
+}
+
+
+// ************************************************************************* //

@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# Summary: Uninstall all dotfiles.
+# Usage: ./setup-uninstall
+
+set -e
+[ -n "${DOTFILES_DEBUG}" ] && set -x
+
+RUNNING=$(basename $0)
+HOME=${HOME}
+
+# Run script directly.
+if [ "$RUNNING" = "setup-uninstall" ]; then
+    dotfiles=(".vimrc" ".gitconfig" ".pip" ".ycm_extra_conf.py" ".tmux.conf" ".zjshaorc" ".tern-project")
+
+    for dotfile in "${dotfiles[@]}"
+    do
+        echo "Remove symlink "${HOME}/${dotfile}"..."
+        rm "${HOME}/${dotfile}"
+    done
+
+    echo "Uninstalling instant-markdown-d module..."
+    npm -g uninstall instant-markdown-d > /dev/null 2>&1
+    npm cache clean
+
+    echo "Done!"
+fi
+

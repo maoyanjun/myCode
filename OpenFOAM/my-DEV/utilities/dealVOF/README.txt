@@ -1,0 +1,10 @@
+PostVOF:
+postSensVOFinYaixs.py:
+	对VOF在Y方向上通过读取每个时间文件夹中的数值进行积分获得每一个时间不上alpha为0.5的Y的位置
+postSensVOFinZaixs.py:
+	对VOF在Z方向上通过读取每个时间文件夹中的数值进行积分获得每一个时间不上alpha为0.5的Z的位置
+ProbeVOFinYaixs.py:
+	对VOF在Y方向上通过读取每个时间文件夹中的数值进行积分获得每一个时间不上alpha为0.5的Y的位置，积分形式不同，插值更加准确一些，消除了液面的抬升
+ProbeVOFReLevel.py：
+	运行前需要输入参考水面高度，便于将水面位置设置为0，Y方向
+处理的时候，先处理VOF 在处理motion

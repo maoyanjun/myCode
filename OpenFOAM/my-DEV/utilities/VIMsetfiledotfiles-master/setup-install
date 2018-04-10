@@ -1,0 +1,165 @@
+#!/usr/bin/env bash
+# Summary: Configure environment and install vim plugins online or offline
+# Usage: ./setup-install [ | --offline]
+
+set -e
+[ -n "$DOTFILES_DEBUG" ] && set -x
+
+# Global vars.
+HOME=${HOME}
+EXEC_PATH=${PWD}
+VUNDLE_PATH="${HOME}/.vim/bundle/Vundle.vim"
+
+# Check bash version.
+check_bash_version()
+{
+    local current_version=${BASH_VERSION:0:1}
+    if [ current_version < 4 ]; then
+        echo "ERROR: The version of your bash must be greater than 4.0!"
+        exit 1
+    fi
+}
+
+# Pre check.
+check_essential_softwares()
+{
+    local essentials=("vim" "git" "tmux" "npm")
+    for e in "${essentials[@]}"
+    do
+        type ${e} 2>&1 > /dev/null
+        if [ "$?" -ne 0 ]; then
+            echo "ERROR: **${e}** is not installed!"
+            exit 1
+        fi
+        echo "Checking ${e}...ok"
+    done
+    echo
+}
+
+create_softlinks()
+{
+    # Check dash.vim support before symlink creation.
+    local system=$(uname)
+    if [ ${system} != "Darwin" ]; then
+        echo "dash.vim is not supported on your ${system}, remove it from .vimrc..."
+        sed -i "/Plugin 'rizzatti\/dash\.vim/d" .vimrc
+    fi
+
+    local dotfiles=(".pip" ".vimrc" ".gitconfig" ".tmux.conf" ".zjshaorc" ".tern-project")
+    for dotfile in "${dotfiles[@]}"
+    do
+        ln -sf "${EXEC_PATH}/${dotfile}" "${HOME}/${dotfile}"
+        echo "Create symlink ${HOME}/${dotfile}"
+    done
+
+    # Create .ycm_extra_conf.py symlink.
+    cd ${HOME}
+    ln -sf ${EXEC_PATH}/.ycm_extra_conf.py .ycm_extra_conf.py
+    cd - > /dev/null 2>&1
+    echo "Create symlink ${HOME}/.ycm_extra_conf.py"
+    echo
+}
+
+install_plugins_online()
+{
+    # Install vundle at first.
+    if [ -d "${VUNDLE_PATH}" ]; then
+        echo "${VUNDLE_PATH} already exits. Updating..."
+        cd "${VUNDLE_PATH}"
+        git pull
+        cd - > /dev/null 2>&1
+    else
+        echo "${VUNDLE_PATH} not exists. Downloading..."
+        git clone https://github.com/gmarik/Vundle.vim.git ${VUNDLE_PATH}
+    fi
+
+    # Install instant-markdown-d for instant markdown preview.
+    echo "Installing instant-markdown for instant markdown preview..."
+    npm -g intall instant-markdown-d > /dev/null 2>&1 
+
+    # Install plugins.
+    echo "Installing vim plugins..."
+    vim +PluginInstall +qall
+}
+
+install_plugins_offline()
+{
+    local dot_vim_path="${HOME}/.vim"
+    local bundle_tar="bundle.tar.gz"
+
+    [ ! -d "$dot_vim_path" ] && mkdir ${dot_vim_path}
+
+    if [ -f "${bundle_tar}" ]; then
+        echo "Install vundle and plugins offline"
+
+        rm -rf "${dot_vim_path}/bundle"
+        cp ${bundle_tar} ${dot_vim_path}
+        cd ${dot_vim_path}
+
+        echo "Unpacking ${bundle_tar}..."
+        tar zxvf ${bundle_tar} > /dev/null 2>&1
+        rm ${bundle_tar}
+        cd - > /dev/null 2>&1
+
+        echo "Done!"
+    else
+        echo "ERROR: **"${bundle_tar}" not exists!"
+        exit 1
+    fi
+}
+
+install_powerline_font()
+{
+    echo "Install powerline-font"
+
+    cd resources
+    tar zxvf fonts.tar.gz > /dev/null 2>&1
+    cd - > /dev/null 2>&1
+
+    cd resources/fonts
+    ./install.sh
+    cd - > /dev/null 2>&1
+
+    rm -rf resources/fonts/
+}
+
+install_vim_colorschemes()
+{
+    local colorsdir="${HOME}/.vim/colors"
+    declare -A local schemes=( \
+        ["molokai.vim"]="https://raw.githubusercontent.com/tomasr/molokai/master/colors/molokai.vim" \
+    )
+
+    echo "Install vim colorschemes"
+    [ -d "${colorsdir}" ] && rm -rf ${colorsdir}
+    mkdir -p ${colorsdir}
+    cd ${colorsdir}
+
+    for scheme in "${!schemes[@]}"
+    do
+        wget ${schemes[$scheme]} > /dev/null 2>&1
+        echo "Install ${scheme} ... ok"
+    done
+
+    cd - > /dev/null 2>&1
+    echo
+}
+
+main()
+{
+    check_bash_version
+    check_essential_softwares
+    install_vim_colorschemes
+    create_softlinks
+    if [ -n "$1" ] && [ "$1" = "--offline" ]; then
+        install_plugins_offline
+    else
+        install_plugins_online
+    fi
+    install_powerline_font
+}
+
+# Run script.
+RUNNING=$(basename $0)
+[ "$RUNNING" = "setup-install" ] && main $1
+

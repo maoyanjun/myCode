@@ -1,0 +1,7 @@
+#!/bin/sh
+mkdir Data
+mkdir Data/Time
+grep -w 'Time' log.overInterDyMFoam >./Data/Time/Time
+grep -w 'ExecutionTime' log.overInterDyMFoam >./Data/Time/ExecutionTime
+grep -w 'Execution time for mesh.update()' log.overInterDyMFoam >./Data/Time/meshupateTime
+# ----------------------------------------------------------------- end-of-file

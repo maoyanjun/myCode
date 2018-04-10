@@ -1,0 +1,19 @@
+1.利用ssh登陆，不用图形界面登陆方式：
+ssh computer name@ip 
+2.开启图形界面：
+确保远程和本地的/etc/ssh/ssh_config 中 x11开启
+然后通过一下命令登陆：
+ssh -X computer name@ip
+3.使用密钥登陆：
+chmod 700 /path/to/
+
+chmod 600 /path/to/kp-1234abcd
+// 将私钥文件设置为只有自己可读写。ssh 会检查这个访问权限是否合理，如果别人可访问，则会拒绝或者忽略该私钥文件。此步骤必须要有。
+
+ssh -i /path/to/kp-1234abcd [user@]hostname
+// -i 指明 identity_file。无参运行 ssh 可看帮助。
+
+作者：michael_jia
+链接：http://www.jianshu.com/p/67e275e08b45
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。 

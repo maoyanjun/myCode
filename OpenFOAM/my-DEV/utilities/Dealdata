@@ -1,0 +1,5 @@
+#!/bin/sh 
+python ProbeVOFReLevel.py
+python plotSensVOF.py
+python reflection.py
+less outFile.txt

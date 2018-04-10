@@ -1,0 +1,106 @@
+    if (kind4wave=="solitary")//孤立波
+    {
+		Info << "孤立波" << endl;
+		maxdisplacement.component(0) = sqrt(16*waveheight/3/initialwaterdepth)*initialwaterdepth;
+		C4solitary = sqrt(g*(initialwaterdepth+waveheight));
+		Tmax = 2/C4solitary*sqrt(4*pow(initialwaterdepth,3)/3/waveheight)*(3.8+waveheight/initialwaterdepth);
+		Info << "C4solitary="<<C4solitary <<endl;//波速
+		Info << "Tmax="<<Tmax <<endl;//推板最大运动时间
+        xi = sqrt(4*waveheight/3/initialwaterdepth)*initialwaterdepth*(1 + tanh(sqrt(3*waveheight/4/pow(initialwaterdepth,3))*(C4solitary*(t.value()-Tmax/2)-(xj-maxdisplacement.component(0)/2))));
+		while (mag (xi - xj) > 0.000001 )
+		{
+			xj=xi;
+			xi = sqrt(4*waveheight/3/initialwaterdepth)*initialwaterdepth*(1 + tanh(sqrt(3*waveheight/4/pow(initialwaterdepth,3))*(C4solitary*(t.value()-Tmax/2)-(xj-maxdisplacement.component(0)/2))));
+		}
+		if (pos(Tmax-t.value()))
+		{
+			displacement.component(0) = xi;//超过最大时间后推板停止运动
+			//Info << "孤立波位移为"<< displacement<< endl;
+		}
+		else 
+		{
+		//Info << "孤立波位移为"<< displacement<< endl;
+		}
+	//focus	
+		    if(kind4wave == "focus")
+    {
+	scalar Displacement_u_focus=0;  //推板速度
+    	word kind4FocusWave= (tuibanwaveGenerationDic.subDict(this->patch().name()).lookup("kind4FocusWave")); 			//聚焦波的产生方式
+	T_start = (tuibanwaveGenerationDic.subDict(this->patch().name()).lookupOrDefault<scalar>("T_start", 1 ));  		//起始周期
+     	T_end = (tuibanwaveGenerationDic.subDict(this->patch().name()).lookupOrDefault<scalar>("T_end", 2 ));				//截止周期
+	x_focus = (tuibanwaveGenerationDic.subDict(this->patch().name()).lookupOrDefault<scalar>("x_focus", 10 ));  		//聚焦位置
+     	t_focus = (tuibanwaveGenerationDic.subDict(this->patch().name()).lookupOrDefault<scalar>("t_focus", 10 ));		//聚焦时间
+
+    	if(kind4FocusWave == "CWA")
+	   {
+            	if (cal4Energy)//只进行一次，节约计算量
+			{
+        f_focus = cal4f_focus(T_start,T_end);		//代表频率
+				w_ = 2*PI*f_focus;
+				k_ = calk_(w_, initialwaterdepth);    		//组成波各波数
+				Hs_ = calHs_(k_ ,initialwaterdepth);  		//求各成分传递函数
+				A = waveheight/2/100;            			//各组成波幅值，此处为等幅值
+				Info << " A = " << A << endl;
+				Info << " f_ = " << f_focus << endl;
+			}
+    	      		forAll(f_focus,i)
+    	     		{
+				Displacement_u_focus += -A*w_[i]/Hs_[i]*cos(k_[i]*(-x_focus)-w_[i]*(t.value()-t_focus));
+    	      		}
+           }
+	if(kind4FocusWave == "CWS")
+	   {
+            	if (cal4Energy)//只进行一次，节约计算量
+			{
+                		f_focus = cal4f_focus(T_start,T_end);		//代表频率
+				w_ = 2*PI*f_focus;
+				k_ = calk_(w_, initialwaterdepth);    		//组成波各波数
+                		scalar k_all = 0;							
+				Hs_ = calHs_(k_ ,initialwaterdepth);  		//求各成分传递函数
+               			forAll(k_,i)
+				{
+    	            			k_all += 1/k_[i];  						//a*k（波陡）的值
+                		}          
+                		forAll(A_focus,i)
+				{
+    	            		A_focus[i] = waveheight/2/k_[i]/k_all;  	//各成分振幅
+                		}   
+				Info << " A = " << A_focus << endl;
+				Info << " f_ = " << f_focus << endl;
+			}    
+    	    			forAll(f_,i)
+    	    			{
+				Displacement_u_focus += -A_focus[i]*w_[i]/Hs_[i]*cos(k_[i]*(-x_focus)-w_[i]*(t.value()-t_focus));
+    	    			}   
+	   }
+	if(kind4FocusWave == "Jonswap")
+	   {
+    	    	if (cal4Energy)//只进行一次，节约计算量
+    	   		{
+				scalar period_focus = 2*T_start*T_end/(T_start+T_end);                  //谱峰周期
+				f_focus = Jonswap_focus(period_focus,T_start,T_end,waveheight, gamma);  //根据Jonswap谱，得到代表频率
+				w_ = 2*PI*f_focus;
+				k_ = calk_(w_, initialwaterdepth);    		//组成波各波数
+				Hs_ = calHs_(k_ ,initialwaterdepth);  		//求各成分传递函数
+
+                		forAll(A_focus,i)					//求波幅
+				{
+					if (i == 99)					//边界
+					{
+						A_focus[i] = A_focus[i-1];
+					}
+					else
+                    			{
+						A_focus[i] = waveheight/2*(f_focus[i+1]-f_focus[i])*Sw_[i]/Energy;	
+                    			}                    
+                		}  
+				Info << " A = " << A_focus << endl;
+				Info << " f_ = " << f_focus << endl;
+   	        	}
+    	    		forAll(f_,i)
+			{
+				Displacement_u_focus += -A_focus[i]*w_[i]/Hs_[i]*cos(k_[i]*(-x_focus)-w_[i]*(t.value()-t_focus));
+    	    		}
+	   }
+	displacement.component(0) += Displacement_u_focus * deltaT;
+    }

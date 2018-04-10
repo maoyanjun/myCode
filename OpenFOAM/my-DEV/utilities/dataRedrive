@@ -1,0 +1,12 @@
+#!/bin/sh
+mkdir Data
+mkdir Data/Motion
+touch Translation
+touch Velocity
+touch Time
+touch Courant
+grep 'Centre of mass' log.waveDyMFoam >./Data/Motion/Translation
+grep 'Linear velocity' log.waveDyMFoam >./Data/Motion/Velocity
+grep -w 'Time' log.waveDyMFoam >./Data/Motion/Time
+grep -w 'Courant Number mean' log.waveDyMFoam |grep -v 'Interface Courant Number mean' >./Data/Motion/Courant
+# ----------------------------------------------------------------- end-of-file

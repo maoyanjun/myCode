@@ -1,0 +1,3 @@
+interTightDyMFoam.C
+
+EXE = $(FOAM_APPBIN)/interTightDyMFoam
