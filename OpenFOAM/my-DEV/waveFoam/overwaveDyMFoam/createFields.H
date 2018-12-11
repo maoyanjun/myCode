@@ -1,5 +1,8 @@
 #include "createRDeltaT.H"
-
+#include "readGravitationalAcceleration.H"
+#include "readWaveProperties.H" 
+#include "readhRef.H"
+#include "gh.H"
 Info<< "Reading field p_rgh\n" << endl;
 volScalarField p_rgh
 (
@@ -27,13 +30,13 @@ volVectorField U
     ),
     mesh
 );
-
+Info<< "createPhi.H\n" << endl;
 #include "createPhi.H"
 
 
 
     //- Overset specific
-
+Info<< "Overset specific\n" << endl;
     // Add solver-specific interpolations
     {
         dictionary oversetDict;
@@ -102,7 +105,7 @@ surfaceScalarField rhoPhi
     fvc::interpolate(rho)*phi
 );
 
-
+Info<< "Reading turbulence\n" << endl;
 // Construct incompressible turbulence model
 autoPtr<incompressible::turbulenceModel> turbulence
 (
@@ -110,9 +113,7 @@ autoPtr<incompressible::turbulenceModel> turbulence
 );
 
 
-#include "readGravitationalAcceleration.H"
-#include "readhRef.H"
-#include "gh.H"
+
 
 
 volScalarField p
@@ -169,3 +170,5 @@ surfaceScalarField alphaPhiUn
 );
 
 #include "createMRF.H"
+Info<< "Apply relaxationZone\n" << endl;
+relaxationZone relaxing(mesh, U, alpha1);

@@ -13,7 +13,7 @@ if (nAlphaSubCycles > 1)   //nAlphaSubCycles代表分割的时间步个数
         dimensionedScalar("0", rhoPhi.dimensions(), 0)
     );
 
-    tmp<volScalarField> trSubDeltaT;
+    tmp<volScalarField> trSubDeltaT;//???
 
     if (LTS)
     {

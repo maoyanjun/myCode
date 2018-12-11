@@ -1,0 +1,221 @@
+#!/bin/bash -
+#title          :mergeData
+#description    :merge coefficients into one file
+#author         :Ran Wang
+#date           :20180703
+#version        :0.0
+#usage          :sh ./mergeData.sh
+#notes          :
+#bash_version   :4.1.2(1)-release
+#============================================================================
+
+
+
+parentFolderName=${PWD##*/}
+
+if [ "$parentFolderName" = "forces" ]; then
+
+    echo "Finding force data"
+
+else
+
+    echo "You need to put this script under the forces folder" &&
+
+    exit;
+fi;
+
+test=$(find . \
+	    -maxdepth 1 \
+	    -type d \
+	    -regextype sed \
+	    -regex '.*' \
+	    -not -path '*/\.*' \
+	   | cut -c 3-)
+
+echo "Analysing your postProcessing folder ..."
+
+a=($(echo "$test" | tr ',' '\n' | sort -g ))
+
+echo "You have: ${#a[@]} time folders:"
+
+for ((i=0; i<${#a[@]}; i++))
+
+do
+    echo "${a[i]}"
+
+done
+
+echo "====================="
+
+echo "Creating the tmp data"
+
+cd "${a[0]}"
+
+cp -f ./forceCoeffs.dat ../forceCoeffs.dat.tmp
+
+cd ..
+
+#### loop inital: find the latest time in the 0 folder
+
+cd "${a[0]}"
+
+latestTime=$(tac forceCoeffs.dat \
+		 |egrep -m 1 . \
+		 | head -n1 \
+		 | awk '{print $1;}')
+
+echo "The latest time before merging is $latestTime"
+
+nextLine=1
+
+cd ..
+
+######## loop all the time data
+
+for ((i=1; i<${#a[@]}; i++))
+
+do
+
+    cd "${a[i]}"
+
+    echo "Entering the folder:  ${PWD##*/}"
+
+    latestTime=$(tac ../forceCoeffs.dat.tmp \
+		     |egrep -m 1 . \
+		     | head -n1 \
+		     | awk '{print $1;}')
+
+    latestTimeLineNum=$(grep -nw "$latestTime " \
+			     forceCoeffs.dat \
+			    |gawk '{print $1}' FS=":")
+
+    (( latestTimeLineNum += nextLine))
+
+    echo "The latestTime is at line: $latestTimeLineNum"
+
+    sed -n "$latestTimeLineNum,$ p" forceCoeffs.dat \
+	>> ../forceCoeffs.dat.tmp
+
+    if [ $i -eq 1 ]
+    then
+	echo "Processing data"
+    else
+	echo "The latest time before merging is: $latestTime"
+    fi
+
+    cd ..
+
+done
+
+echo "The forece.dat has been merged."
+#=== merge bin data
+
+echo "==================="
+echo "Working on bin data"
+echo "==================="
+test=$(find . -maxdepth 1 \
+	    -type d \
+	    -regextype sed \
+	    -regex '.*' \
+	    -not -path '*/\.*' \
+	   | cut -c 3-)
+
+echo "Analysing postProcessing folder ..."
+
+abin=($(echo "$test" | tr ',' '\n' | sort -g ))
+
+echo "Found ${#abin[@]} time folders:"
+
+for ((j=0; j<${#abin[@]}; j++))
+
+do
+    echo "${abin[j]}"
+
+done
+
+echo "====================="
+
+echo "Creating the tmp data"
+
+cd "${abin[0]}"
+
+cp -f ./forceCoeffs_bins.dat ../forceCoeffs_bins.dat.tmp
+
+cd ..
+
+#### loop inital: find the latest time in the 0 folder
+
+cd "${abin[0]}"
+
+latestTime=$(tac forceCoeffs.dat \
+		 |egrep -m 1 . \
+		 |head -n1 \
+		 |awk '{print $1;}')
+
+echo "The latest time before merging is $latestTime"
+
+nextLine=1
+
+cd ..
+
+######## loop all the time data
+
+for ((j=1; j<${#abin[@]}; j++))
+
+do
+
+    cd "${abin[j]}"
+
+    echo "I am entering the folder:  ${PWD##*/}"
+
+    latestTime=$(tac ../forceCoeffs_bins.dat.tmp \
+		     |egrep -m 1 . \
+		     |head -n1 \
+		     |awk '{print $1;}')
+
+    latestTimeLineNum=$(grep -nw "$latestTime " \
+			     forceCoeffs_bins.dat \
+			    |gawk '{print $1}' FS=":")
+
+    (( latestTimeLineNum += nextLine))
+
+    echo "The latestTime is at line: $latestTimeLineNum"
+
+    sed -n "$latestTimeLineNum,$ p" forceCoeffs_bins.dat >> \
+	../forceCoeffs_bins.dat.tmp
+
+    if [ $j -eq 1 ]
+    then
+	echo "Processing data"
+    else
+	echo "The latest time before merging is: $latestTime"
+    fi
+
+    cd ..
+
+done
+
+echo "The forece_bins.dat has been merged."
+
+
+## check the unnecessary data
+## ( genereted by not considering the time data without overlaps )
+
+echo "check the unncessary data"
+
+## processing span-wise averaged data
+tail -n +10 forceCoeffs.dat.tmp |  grep -v '^#'  > forceCoeffs.dat.onlyTime &&
+    sed '10,$ d' forceCoeffs.dat.tmp > forceCoeffs.dat.onlyHead &&
+    cat forceCoeffs.dat.onlyTime >> forceCoeffs.dat.onlyHead &&
+    mv -f forceCoeffs.dat.onlyHead forceCoeffs.dat.merged
+
+## processing span-wise averaged data
+tail -n +10 forceCoeffs_bins.dat.tmp |  grep -v '^#'  > forceCoeffs_bins.dat.onlyTime &&
+    sed '10,$ d' forceCoeffs_bins.dat.tmp > forceCoeffs_bins.dat.onlyHead &&
+    cat forceCoeffs_bins.dat.onlyTime >> forceCoeffs_bins.dat.onlyHead &&
+    mv -f forceCoeffs_bins.dat.onlyHead forceCoeffs_bins.dat.merged
+
+## delete temproal files
+
+rm -rf *.onlyTime
+rm -rf *.tmp

@@ -1,0 +1,1 @@
+../sixDoFRigidBodyMotionLatch/restraints/sixDoFRigidBodyMotionRestraint/sixDoFRigidBodyMotionRestraintNew.C

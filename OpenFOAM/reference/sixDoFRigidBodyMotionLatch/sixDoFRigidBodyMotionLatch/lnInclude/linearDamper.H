@@ -1,0 +1,1 @@
+../sixDoFRigidBodyMotionLatch/restraints/linearDamper/linearDamper.H

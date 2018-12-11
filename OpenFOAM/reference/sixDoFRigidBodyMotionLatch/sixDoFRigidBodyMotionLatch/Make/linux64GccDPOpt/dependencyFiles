@@ -1,0 +1,25 @@
+DEPENDENCIES = \
+sixDoFRigidBodyMotion/sixDoFRigidBodyMotion.dep\
+sixDoFRigidBodyMotion/sixDoFRigidBodyMotionIO.dep\
+sixDoFRigidBodyMotion/sixDoFRigidBodyMotionState.dep\
+sixDoFRigidBodyMotion/sixDoFRigidBodyMotionStateIO.dep\
+$(restraints)/sixDoFRigidBodyMotionRestraint/sixDoFRigidBodyMotionRestraint.dep\
+$(restraints)/sixDoFRigidBodyMotionRestraint/sixDoFRigidBodyMotionRestraintNew.dep\
+$(restraints)/linearAxialAngularSpring/linearAxialAngularSpring.dep\
+$(restraints)/linearSpring/linearSpring.dep\
+$(restraints)/sphericalAngularSpring/sphericalAngularSpring.dep\
+$(restraints)/tabulatedAxialAngularSpring/tabulatedAxialAngularSpring.dep\
+$(restraints)/linearDamper/linearDamper.dep\
+$(restraints)/sphericalAngularDamper/sphericalAngularDamper.dep\
+$(constraints)/sixDoFRigidBodyMotionConstraint/sixDoFRigidBodyMotionConstraint.dep\
+$(constraints)/sixDoFRigidBodyMotionConstraint/sixDoFRigidBodyMotionConstraintNew.dep\
+$(constraints)/axis/sixDoFRigidBodyMotionAxisConstraint.dep\
+$(constraints)/line/sixDoFRigidBodyMotionLineConstraint.dep\
+$(constraints)/orientation/sixDoFRigidBodyMotionOrientationConstraint.dep\
+$(constraints)/plane/sixDoFRigidBodyMotionPlaneConstraint.dep\
+$(constraints)/point/sixDoFRigidBodyMotionPointConstraint.dep\
+pointPatchFields/derived/sixDoFRigidBodyDisplacement/sixDoFRigidBodyDisplacementPointPatchVectorField.dep\
+pointPatchFields/derived/uncoupledSixDoFRigidBodyDisplacement/uncoupledSixDoFRigidBodyDisplacementPointPatchVectorField.dep\
+sixDoFRigidBodyMotionSolver/sixDoFRigidBodyMotionSolver.dep\
+sixDoFRigidBodyMotionSolver/externalPointEdgePoint.dep\
+sixDoFRigidBodyMotionSolver/pointPatchDist.dep

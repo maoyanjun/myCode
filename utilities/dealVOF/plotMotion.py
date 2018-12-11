@@ -29,7 +29,7 @@ a.close()
 fileR = open(os.path.join(pathname,'Velocity'), 'r')
 a=open(os.path.join(pathname,'splitVelocity'), 'w')
 data = fileR.read()
-fileR.close()
+fileR.close()q
 data = re.split('\n',data)
 t=[]
 for k in range(len(data)-1):

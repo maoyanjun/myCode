@@ -1,0 +1,1 @@
+../sixDoFRigidBodyMotionLatch/restraints/linearAxialAngularSpring/linearAxialAngularSpring.H

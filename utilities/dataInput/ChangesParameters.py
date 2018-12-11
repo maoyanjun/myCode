@@ -1,9 +1,4 @@
 #!/usr/bin/python
-"""
-Created on 2017 12 9
-
-@author: Yanjun Mao
-"""
 #set the script in the top dictionary,and execute it py tpye "python ChangesParameters.py"
 import os 
 
@@ -24,7 +19,7 @@ for i in range(len(a)):
     #print dir1
     dampingCoeff=raw_input("input the dampingCoeff: ")
     f=open('script.sed','w')
-    f.write('1,/coeff/c\            coeff         '+str(dampingCoeff)+';')
+    f.write('/coeff/c\            coeff         '+str(dampingCoeff)+';')
     f.close()
     os.system('sed -i -f script.sed' +' '+dir1+'/pointDisplacement')
 

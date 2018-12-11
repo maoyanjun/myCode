@@ -1,0 +1,1 @@
+../sixDoFRigidBodyMotionLatch/sixDoFRigidBodyMotionIO.C

@@ -1,0 +1,7 @@
+# 1 "files"
+# 1 "<command-line>"
+# 1 "files"
+PTO_Angle.C
+
+LIB = $(FOAM_USER_LIBBIN)/libPTO_Angle
+

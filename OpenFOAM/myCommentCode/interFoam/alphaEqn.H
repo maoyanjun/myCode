@@ -3,7 +3,7 @@
     word alphaScheme("div(phi,alpha)");
     word alpharScheme("div(phirb,alpha)");
     surfaceScalarField phic(mag(phi/mesh.magSf()));    // 定义表面速度绝对值  phic 即 丨U丨
-    phic = min(interface.cAlpha()*phic, max(phic));    //丨U丨=min (cAlpha*丨U丨，max(丨U丨))
+    phic = min(interface.cAlpha()*phic, max(phic));    //丨U丨=min (cAlpha*丨U丨，max(丨U丨)) cAlpha??
     surfaceScalarField phir(phic*interface.nHatf());   // Ur = 丨U丨* n *Sf   其中，nHatf()为自由表面的单位法向量*Sf
                                                        //   surfaceVectorField nHatfv(gradAlphaf/(mag(gradAlphaf) + deltaN_));
     for (int aCorr=0; aCorr<nAlphaCorr; aCorr++)       //   deltaN_= 1e-8/pow(average(alpha1.mesh().V()), 1.0/3.0)   非常小的值 保证分母不为0        
@@ -31,7 +31,8 @@
     }
 
     Info<< "Phase-1 volume fraction = "
-        << alpha1.weightedAverage(mesh.Vsc()).value()
+        << alpha1.weightedAverage(mesh.Vsc()).value()  //            //- Return sub-cycle cell volumes //tmp<DimensionedField<scalar, volMesh> > Vsc() const;
+
         << "  Min(alpha1) = " << min(alpha1).value()
         << "  Max(alpha1) = " << max(alpha1).value()
         << endl;
@@ -55,8 +56,8 @@
     );
 
     // Set the off-centering coefficient according to ddt scheme
-    scalar ocCoeff = 0;     //设置ddt格式的偏心系数
-    if                      //如果是Euler或者localEuler时间离散格式  ocCoeff = 0
+    scalar ocCoeff = 0;     //设置ddt格式的偏心系数 
+    if                      //如果是Euler或者localEuler时间离散格式  ocCoeff = 0 仅针对C-N scheme 且无子循环步的情况有效
     (
         isType<fv::EulerDdtScheme<scalar> >(ddtAlpha())
      || isType<fv::localEulerDdtScheme<scalar> >(ddtAlpha())
@@ -66,7 +67,7 @@
     }
     else if (isType<fv::CrankNicolsonDdtScheme<scalar> >(ddtAlpha()))
     {
-        if (nAlphaSubCycles > 1)
+        if (nAlphaSubCycles > 1) //it indict that the subcycle is not supported.
         {
             FatalErrorIn(args.executable())
                 << "Sub-cycling is not supported "
@@ -93,7 +94,7 @@
     if (icAlpha > 0)   // 默认 icAlpha = 0 (一般不考虑此项)
     {
         phic *= (1.0 - icAlpha);                                      //Uc=cAlpha*丨U丨*(1-icAlpha)
-        phic += (mixture.cAlpha()*icAlpha)*fvc::interpolate(mag(U));  // Uc=cAlpha*丨U丨*(1-icAlpha)+ cAlpha*icAlpha*丨U丨= cAlpha*丨U丨
+        phic += (mixture.cAlpha()*icAlpha)*fvc::interpolate(mag(U));  // Uc=cAlpha*丨U丨*(1-icAlpha)+ cAlpha*icAlpha*丨U丨= cAlpha*丨U丨co从这里看貌似回到了原点一样，是不是翻译的不对
     }
 
     // Do not compress interface at non-coupled boundary faces  //在不耦合的边界面不添加压缩项
@@ -116,7 +117,7 @@
         phiCN = cnCoeff*phi + (1.0 - cnCoeff)*phi.oldTime();    //求解CN格式下的加权phiCN
     }
 
-    if (MULESCorr)    //采用MULES修正方法求解相方程
+    if (MULESCorr)    //采用MULES修正方法求解相方程 无压缩项的？？？ 没明白这一段是什么含义
     {
         fvScalarMatrix alpha1Eqn   //不带压缩项的相方程 （散度项）  
         (
@@ -224,7 +225,7 @@
 
         alpha2 = 1.0 - alpha1;
 
-        mixture.correct();      //修正平均运动粘度 和 界面曲率
+        mixture.correct();      //修正平均运动粘度 和 界面曲率 什么情况下需要修正？
     }
 
     if (alphaApplyPrevCorr && MULESCorr)    

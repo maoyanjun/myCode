@@ -1,0 +1,4 @@
+pModels=porosityModel
+JJC=jensenJacobsenChristensen2014
+poroCoeffs=porosityCoefficients
+LIB = $(WAVES_LIBBIN)/libwaves2FoamPorosity

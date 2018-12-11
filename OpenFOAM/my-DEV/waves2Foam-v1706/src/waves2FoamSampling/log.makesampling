@@ -1,0 +1,62 @@
+wmake libso (waves2FoamSampling)
+g++ -std=c++11 -m64 -DOPENFOAM_PLUS=1706 -Dlinux64 -DWM_ARCH_OPTION=64 -DWM_DP -DWM_LABEL_SIZE=64 -Wall -Wextra -Wold-style-cast -Wnon-virtual-dtor -Wno-unused-parameter -Wno-invalid-offsetof -O3  -DNoRepository -ftemplate-depth-100 -DOFVERSION= -DEXTBRANCH= -DXVERSION= -DOFPLUSBRANCH= -I/home/shzx/OpenFOAM/OpenFOAM-v1706/src/finiteVolume/lnInclude -I/home/shzx/OpenFOAM/OpenFOAM-v1706/src/meshTools/lnInclude -I/home/shzx/OpenFOAM/OpenFOAM-v1706/src/sampling/lnInclude -I/home/shzx/OpenFOAM/OpenFOAM-v1706/src/lagrangian/basic/lnInclude -I/home/shzx/OpenFOAM/OpenFOAM-v1706/src/fileFormats/lnInclude -I/waves2Foam/lnInclude -I -IlnInclude -I. -I/home/shzx/OpenFOAM/OpenFOAM-v1706/src/OpenFOAM/lnInclude -I/home/shzx/OpenFOAM/OpenFOAM-v1706/src/OSspecific/POSIX/lnInclude   -fPIC -c surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C -o Make/linux64GccDPInt64Opt/surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.o
+In file included from surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:27:0:
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.H:299:14: error: operator '==' has no left operand
+ #if EXTBRANCH==1
+              ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.H:301:19: error: operator '==' has no left operand
+ #elif OFPLUSBRANCH==1
+                   ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.H:306:18: error: operator '<' has no left operand
+     #if OFVERSION<220
+                  ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.H:311:22: error: operator '>' has no left operand
+         #if OFVERSION>220
+                      ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.H:313:23: error: #elif with no expression
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:30:14: error: operator '==' has no left operand
+ #if EXTBRANCH==1
+              ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:36:19: error: operator '==' has no left operand
+ #elif OFPLUSBRANCH==1
+                   ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:79:18: error: operator '==' has no left operand
+ #if OFPLUSBRANCH == 1
+                  ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:235:14: error: operator '==' has no left operand
+ #if EXTBRANCH==1
+              ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:259:19: error: operator '==' has no left operand
+ #elif OFPLUSBRANCH==1
+                   ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:272:19: error: operator '<' has no left operand
+     #if OFVERSION < 200
+                   ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:329:14: error: operator '==' has no left operand
+ #if EXTBRANCH==1
+              ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:331:19: error: operator '==' has no left operand
+ #elif OFPLUSBRANCH==1
+                   ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:334:18: error: operator '<' has no left operand
+     #if OFVERSION<210
+                  ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:761:14: error: operator '==' has no left operand
+ #if EXTBRANCH==1
+              ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:767:19: error: operator '==' has no left operand
+ #elif OFPLUSBRANCH==1
+                   ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:780:18: error: operator '<' has no left operand
+     #if OFVERSION<220
+                  ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:794:23: error: operator '>' has no left operand
+         #if OFVERSION > 220
+                       ^
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:800:23: error: #elif with no expression
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C: In member function ‘bool Foam::sampledSurfaceElevation::checkFieldTypes()’:
+surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.C:102:20: error: ‘class Foam::IOobject’ has no member named ‘headerOk’
+             if (io.headerOk())
+                    ^
+/home/shzx/OpenFOAM/OpenFOAM-v1706/wmake/rules/General/transform:28: recipe for target 'Make/linux64GccDPInt64Opt/surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.o' failed
+make: *** [Make/linux64GccDPInt64Opt/surfaceElevation/sampledSurfaceElevation/sampledSurfaceElevation.o] Error 1

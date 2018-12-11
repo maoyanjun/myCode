@@ -1,0 +1,2 @@
+mylinearSpring.C
+LIB = $(FOAM_USER_LIBBIN)/libmylinearSpring

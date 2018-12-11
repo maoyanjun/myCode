@@ -1,0 +1,1 @@
+../sixDoFRigidBodyMotionLatch/constraints/sixDoFRigidBodyMotionConstraint/sixDoFRigidBodyMotionConstraint.C

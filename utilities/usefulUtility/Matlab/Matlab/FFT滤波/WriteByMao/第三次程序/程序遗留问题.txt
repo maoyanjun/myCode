@@ -1,0 +1,29 @@
+1.FFT变换后的频谱的峰值与时程曲线不对应，需要了解傅里叶变换后能量谱的表达方式，程序中加星号的两行的表达形式，不影响滤波结果和误差评价，但是确实幅值不对应。
+y_ft=fft(y,nfft);%对y信号进行DFT，得到频率的幅值分布
+y_p=y_ft.*conj(y_ft)/nfft;%conj()函数是求y函数的共轭复数，实数的共轭复数是他本身。
+y_f=fs*(0:nfft/2-1)/nfft;%T变换后对应的频率的序列
+% y_p=y_ft.*conj(y_ft)/nfft;%conj()函数是求y函数的共轭复数，实数的共轭复数是他本身。
+%a=y_ft;
+%b=y_f;
+%e=y;
+%g=nfft;
+h=abs(y_ft(1:nfft/2))/length(y);%**********
+g=h.^2;%********
+%plot(y_f,2*abs(y_ft(1:nfft/2))/length(y));%matlab的帮助里画FFT的方法
+%area1=trapz(y_f,2*abs(y_ft(1:nfft/2))/length(y))
+plot(y_f,g);%matlab的帮助里画FFT的方法
+area=trapz(y_f,g)
+set(gca,'xlim',[0,20]);
+，可以百度“傅里叶变换后的频率，能量谱和功率谱的表达”，或者MATLAB help fft的相关内容。
+2.%*******************************数据输出*********************%
+s1(1).x1='MaxPeak';s1(1).x2=mi;s1(1).x3=MAX;
+s1(2).x1='1/2MaxPeak';s1(2).x2=c;s1(2).x3=C;
+s1(3).x1='1/5MaxPeak';s1(3).x2=d;s1(3).x3=D;
+s1(4).x1='AreaOriginal';s1(4).x2=AreaOriginal;
+s1(5).x1='AreaFilter';s1(5).x2=AreaFilter;
+s1(6).x1='error';s1(6).x2=error;
+s1(7).x1='errorPeak';s1(7).x2=errorPeak;
+s1(8).x1='SNR';s1(8).x2=SNR;
+s1(9).x1='RMSE';s1(9).x2=RMSE;
+save(['E:\MATLAB-FFT\SC20_FL20_C1\',num2str(filename),'ImportData.mat'], 's1'); 
+该部分内容在数据格式的保存上数据结构没划分好，需要进一步处理。参考MATLAB结构数据，和.mat文件保存相关内容。

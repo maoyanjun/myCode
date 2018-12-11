@@ -1,0 +1,1 @@
+../sixDoFRigidBodyMotionLatch/restraints/sphericalAngularDamper/sphericalAngularDamper.C

@@ -1,0 +1,34 @@
+sixDoFRigidBodyMotionLatch/sixDoFRigidBodyMotionLatch.C
+sixDoFRigidBodyMotionLatch/sixDoFRigidBodyMotionIO.C
+sixDoFRigidBodyMotionLatch/sixDoFRigidBodyMotionState.C
+sixDoFRigidBodyMotionLatch/sixDoFRigidBodyMotionStateIO.C
+
+restraints = sixDoFRigidBodyMotionLatch/restraints
+
+$(restraints)/sixDoFRigidBodyMotionRestraint/sixDoFRigidBodyMotionRestraint.C
+$(restraints)/sixDoFRigidBodyMotionRestraint/sixDoFRigidBodyMotionRestraintNew.C
+$(restraints)/linearAxialAngularSpring/linearAxialAngularSpring.C
+$(restraints)/linearSpring/linearSpring.C
+$(restraints)/sphericalAngularSpring/sphericalAngularSpring.C
+$(restraints)/tabulatedAxialAngularSpring/tabulatedAxialAngularSpring.C
+$(restraints)/linearDamper/linearDamper.C
+$(restraints)/sphericalAngularDamper/sphericalAngularDamper.C
+
+constraints = sixDoFRigidBodyMotionLatch/constraints
+
+$(constraints)/sixDoFRigidBodyMotionConstraint/sixDoFRigidBodyMotionConstraint.C
+$(constraints)/sixDoFRigidBodyMotionConstraint/sixDoFRigidBodyMotionConstraintNew.C
+$(constraints)/axis/sixDoFRigidBodyMotionAxisConstraint.C
+$(constraints)/line/sixDoFRigidBodyMotionLineConstraint.C
+$(constraints)/orientation/sixDoFRigidBodyMotionOrientationConstraint.C
+$(constraints)/plane/sixDoFRigidBodyMotionPlaneConstraint.C
+$(constraints)/point/sixDoFRigidBodyMotionPointConstraint.C
+
+pointPatchFields/derived/sixDoFRigidBodyDisplacement/sixDoFRigidBodyDisplacementPointPatchVectorField.C
+pointPatchFields/derived/uncoupledSixDoFRigidBodyDisplacement/uncoupledSixDoFRigidBodyDisplacementPointPatchVectorField.C
+
+sixDoFRigidBodyMotionLatchSolver/sixDoFRigidBodyMotionLatchSolver.C
+sixDoFRigidBodyMotionLatchSolver/externalPointEdgePoint.C
+sixDoFRigidBodyMotionLatchSolver/pointPatchDist.C
+
+LIB = $(FOAM_LIBBIN)/libsixDoFRigidBodyMotionLatch

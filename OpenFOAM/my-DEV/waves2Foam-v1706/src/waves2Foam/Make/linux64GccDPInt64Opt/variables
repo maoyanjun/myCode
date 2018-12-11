@@ -1,0 +1,15 @@
+convex=convexPolyhedral
+waveTheories=waveTheories
+waveTheory=waveTheory
+current=current
+solitary=solitary
+regular=regular
+irregular=irregular
+mixedType=mixedType
+fvPatchFields=fvPatchFields
+relaxMethod=relaxationZone
+relaxShape=relaxationShape
+relaxWeight=relaxationWeight
+relaxScheme=relaxationScheme
+numericalBeach=numericalBeach
+LIB = $(WAVES_LIBBIN)/libwaves2Foam

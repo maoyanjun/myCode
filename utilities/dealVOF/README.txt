@@ -8,3 +8,6 @@ ProbeVOFinYaixs.py:
 ProbeVOFReLevel.py：
 	运行前需要输入参考水面高度，便于将水面位置设置为0，Y方向
 处理的时候，先处理VOF 在处理motion
+
+reflectionNotransmission.py
+处理透射系数为零的算例的用于分离反射波和入射波

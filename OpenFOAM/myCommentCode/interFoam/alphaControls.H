@@ -1,6 +1,6 @@
 const dictionary& alphaControls = mesh.solverDict(alpha1.name());
 
-label nAlphaCorr(readLabel(alphaControls.lookup("nAlphaCorr"))); //当前时间步内对相场进行循环求解
+label nAlphaCorr(readLabel(alphaControls.lookup("nAlphaCorr"))); //当前时间步内对相场进行循环求解?
 
 label nAlphaSubCycles(readLabel(alphaControls.lookup("nAlphaSubCycles")));//代表alpha方程中子循环的数目  降低时间步长以保证解的稳定
 

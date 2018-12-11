@@ -1,0 +1,25 @@
+LOCAL_OBJECTS = \
+sixDoFRigidBodyMotionLatch.o\
+sixDoFRigidBodyMotionIO.o\
+sixDoFRigidBodyMotionState.o\
+sixDoFRigidBodyMotionStateIO.o\
+sixDoFRigidBodyMotionRestraint.o\
+sixDoFRigidBodyMotionRestraintNew.o\
+linearAxialAngularSpring.o\
+linearSpring.o\
+sphericalAngularSpring.o\
+tabulatedAxialAngularSpring.o\
+linearDamper.o\
+sphericalAngularDamper.o\
+sixDoFRigidBodyMotionConstraint.o\
+sixDoFRigidBodyMotionConstraintNew.o\
+sixDoFRigidBodyMotionAxisConstraint.o\
+sixDoFRigidBodyMotionLineConstraint.o\
+sixDoFRigidBodyMotionOrientationConstraint.o\
+sixDoFRigidBodyMotionPlaneConstraint.o\
+sixDoFRigidBodyMotionPointConstraint.o\
+sixDoFRigidBodyDisplacementPointPatchVectorField.o\
+uncoupledSixDoFRigidBodyDisplacementPointPatchVectorField.o\
+sixDoFRigidBodyMotionLatchSolver.o\
+externalPointEdgePoint.o\
+pointPatchDist.o

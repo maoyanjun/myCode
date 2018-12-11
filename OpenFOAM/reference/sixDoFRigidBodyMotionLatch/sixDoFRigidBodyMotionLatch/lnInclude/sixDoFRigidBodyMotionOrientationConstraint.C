@@ -1,0 +1,1 @@
+../sixDoFRigidBodyMotionLatch/constraints/orientation/sixDoFRigidBodyMotionOrientationConstraint.C

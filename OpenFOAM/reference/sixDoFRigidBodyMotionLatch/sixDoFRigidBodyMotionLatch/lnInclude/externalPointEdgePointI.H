@@ -1,0 +1,1 @@
+../sixDoFRigidBodyMotionLatchSolver/externalPointEdgePointI.H

@@ -1,0 +1,28 @@
+$(OBJECTS_DIR)/postProcessing/postProcessingWaves/spectralAnalysis/spectralMethods/complexExp.C.dep: \
+postProcessing/postProcessingWaves/spectralAnalysis/spectralMethods/complexExp.C \
+postProcessing/postProcessingWaves/spectralAnalysis/spectralMethods/complexExp.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/complex.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/scalar.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/floatScalar.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/doubleFloat.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/label.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/int.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/int32.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/word.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/string.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/char.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Hasher.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/stringI.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/wordI.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/pTraits.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/direction.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/int64.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/labelSpecific.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/products.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/Scalar.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/doubleScalar.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/bool.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/contiguous.H \
+$(WM_PROJECT_DIR)/src/OpenFOAM/lnInclude/complexI.H \
+
+

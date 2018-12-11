@@ -1,0 +1,14 @@
+clear all;
+h=input('please input water depth h');
+T=input('please input wave proid T');
+a=9.8*T^2/2*pi;
+b=a;
+L=a*tanh(2*pi/a*h);
+while i<100;
+    if((L-b)<0.02)
+        break;
+    else
+        L=b*tanh(2*pi/L*h);
+    end
+    i=i+1;
+end

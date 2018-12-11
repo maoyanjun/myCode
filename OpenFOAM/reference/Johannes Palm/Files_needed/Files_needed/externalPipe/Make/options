@@ -1,0 +1,8 @@
+EXE_INC = \
+	  -Wl,-rpath,/chalmers/sw/sup64/matlab-2011b/bin/glnxa64 \
+    	  -I/chalmers/sw/sup64/matlab-2011b/extern/include
+ 
+LIB_LIBS = \
+	  -L/chalmers/sw/sup64/matlab-2011b/bin/glnxa64 \
+	  -leng \
+	  -lmx

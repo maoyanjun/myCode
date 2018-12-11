@@ -1,0 +1,1 @@
+../sixDoFRigidBodyMotionLatch/restraints/tabulatedAxialAngularSpring/tabulatedAxialAngularSpring.C

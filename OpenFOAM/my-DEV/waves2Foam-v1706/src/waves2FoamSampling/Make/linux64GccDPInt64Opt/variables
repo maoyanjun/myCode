@@ -1,0 +1,1 @@
+LIB = $(WAVES_LIBBIN)/libwaves2FoamSampling

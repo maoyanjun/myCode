@@ -1,0 +1,1 @@
+../sixDoFRigidBodyMotionLatch/constraints/plane/sixDoFRigidBodyMotionPlaneConstraint.H

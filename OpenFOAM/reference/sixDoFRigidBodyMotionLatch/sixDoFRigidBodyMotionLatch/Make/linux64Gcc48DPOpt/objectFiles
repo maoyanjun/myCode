@@ -1,0 +1,25 @@
+OBJECTS = \
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionLatch.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionIO.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionState.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionStateIO.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionRestraint.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionRestraintNew.o\
+$(OBJECTS_DIR)/linearAxialAngularSpring.o\
+$(OBJECTS_DIR)/linearSpring.o\
+$(OBJECTS_DIR)/sphericalAngularSpring.o\
+$(OBJECTS_DIR)/tabulatedAxialAngularSpring.o\
+$(OBJECTS_DIR)/linearDamper.o\
+$(OBJECTS_DIR)/sphericalAngularDamper.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionConstraint.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionConstraintNew.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionAxisConstraint.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionLineConstraint.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionOrientationConstraint.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionPlaneConstraint.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionPointConstraint.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyDisplacementPointPatchVectorField.o\
+$(OBJECTS_DIR)/uncoupledSixDoFRigidBodyDisplacementPointPatchVectorField.o\
+$(OBJECTS_DIR)/sixDoFRigidBodyMotionLatchSolver.o\
+$(OBJECTS_DIR)/externalPointEdgePoint.o\
+$(OBJECTS_DIR)/pointPatchDist.o
