@@ -1,0 +1,1110 @@
+// Created     : 2020-01-1 20:58:17
+// DLL         : C:\Program Files (x86)\DHI\2019\bin\x64\pfs2004.dll
+// Version     : 17.2.0.13162
+
+[M21MooringAnalysis]
+   [DOMAIN]
+      Touched = 1
+      file_name = |..\..\Domain\Grid1.dfs2|
+      item_number = 1
+      coordinate_type = 'NON-UTM'
+      plot_extent_type = 1
+      min_easting = 0.0
+      min_northing = 0.0
+      max_easting = 3848.0
+      max_northing = 3768.0
+      x0 = 0.0
+      x1 = 0.0
+      y0 = 0.0
+      y1 = 0.0
+   EndSect  // DOMAIN
+
+   [TIME]
+      Touched = 1
+      start_time = 2000, 1, 1, 0, 0, 0
+      time_step_interval = 0.25
+      number_of_time_steps = 20000
+      number_of_warm_up_time_steps = 0
+      number_of_warm_down_time_steps = 0
+   EndSect  // TIME
+
+   [SIMULATION_MODE]
+      Touched = 1
+      mode = 2
+   EndSect  // SIMULATION_MODE
+
+   [MATERIAL_PROFILES]
+      [LINE_PROFILES]
+         Touched = 1
+         MzSEPfsListItemCount = 1
+         number_of_line_profiles = 1
+         [LINE_PROFILE_1]
+            Touched = 1
+            type = 1
+            profile_name = 'Line Profile 1'
+            total_breaking_strength = 117.0
+            failure_load = 45.0
+            linear_damping_coefficient = 0.0
+            quadratic_damping_coefficient = 0.0
+            file_name = |..\..\Material Profiles\OCIMF_Polyamide_Double_Braid_Broken-In.dfs0|
+            item_number = 1
+            item_name = 'Line Reaction Force'
+         EndSect  // LINE_PROFILE_1
+
+      EndSect  // LINE_PROFILES
+
+      [FENDER_PROFILES]
+         Touched = 1
+         MzSEPfsListItemCount = 1
+         number_of_fender_profiles = 1
+         [FENDER_PROFILE_1]
+            Touched = 1
+            type = 1
+            profile_name = 'Fender Profile 1'
+            max_reaction_force = 1893.0
+            max_deflection = 2.0
+            failure_deflection = 55.0
+            fender_friction_coefficient = 0.25
+            linear_damping_coefficient = 0.0
+            thickness = 2.06
+            file_name = |..\..\Material Profiles\Shibata_CSS_Cell_fender.dfs0|
+            item_number = 1
+            item_name = 'Reaction'
+         EndSect  // FENDER_PROFILE_1
+
+      EndSect  // FENDER_PROFILES
+
+      [CHAIN_PROFILES]
+         Touched = 1
+         MzSEPfsListItemCount = 0
+         number_of_chain_profiles = 0
+      EndSect  // CHAIN_PROFILES
+
+      [BOLLARD_PROFILES]
+         Touched = 1
+         MzSEPfsListItemCount = 1
+         number_of_bollard_profiles = 1
+         [BOLLARD_PROFILE_1]
+            Touched = 1
+            type = 1
+            profile_name = 'Bollard Profile'
+            include_max_vertical_force = 1
+            max_vertical_force = 1000.0
+            include_max_horizontal_force = 1
+            max_horizontal_force = 2000.0
+            include_max_total_force = 1
+            max_total_force = 2500.0
+            include_max_vertical_line_angle = 1
+            max_vertical_line_angle = 60.0
+            failure_load = 75.0
+         EndSect  // BOLLARD_PROFILE_1
+
+      EndSect  // BOLLARD_PROFILES
+
+   EndSect  // MATERIAL_PROFILES
+
+   [VESSELS]
+      Touched = 1
+      MzSEPfsListItemCount = 1
+      vessel_response_file = |..\..\..\FRC\1111\Vessel_response.vre|
+      number_of_vessels = 1
+      [VESSEL_1]
+         Touched = 1
+         name = 'Vessel 1'
+         [VESSEL_DATA]
+            Touched = 1
+            longitudinal_area = 750.0
+            transverse_area = 3500.0
+            lpp = 191.0706
+            loading_condition = 50.0
+            deck_plane_height = 23.0768486
+            vessel_class = 4
+            wind_drag_file = ||
+            current_drag_file = ||
+         EndSect  // VESSEL_DATA
+
+         [SPATIAL_ATTRIBUTES]
+            Touched = 1
+            vessel_origo = 1
+            x0 = -101.0
+            x1 = 107.0
+            y0 = -18.0
+            y1 = 27.0
+            [FAIRLEADS]
+               Touched = 1
+               MzSEPfsListItemCount = 10
+               number_of_fairleads = 10
+               [FAIRLEAD_1]
+                  Touched = 1
+                  name = 'Fairlead 1'
+                  x = -97.0
+                  y = 0.0
+                  z = 23.6
+                  symbol_orientation = 90.0
+               EndSect  // FAIRLEAD_1
+
+               [FAIRLEAD_2]
+                  Touched = 1
+                  name = 'Fairlead 2'
+                  x = -97.0
+                  y = -1.0
+                  z = 23.6
+                  symbol_orientation = 90.0
+               EndSect  // FAIRLEAD_2
+
+               [FAIRLEAD_3]
+                  Touched = 1
+                  name = 'Fairlead 3'
+                  x = -95.0
+                  y = -13.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // FAIRLEAD_3
+
+               [FAIRLEAD_4]
+                  Touched = 1
+                  name = 'Fairlead 4'
+                  x = 84.0
+                  y = -9.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // FAIRLEAD_4
+
+               [FAIRLEAD_5]
+                  Touched = 1
+                  name = 'Fairlead 5'
+                  x = 93.0
+                  y = -4.0
+                  z = 23.6
+                  symbol_orientation = -60.0
+               EndSect  // FAIRLEAD_5
+
+               [FAIRLEAD_6]
+                  Touched = 1
+                  name = 'Fairlead 6'
+                  x = 95.0
+                  y = 0.0
+                  z = 23.6
+                  symbol_orientation = -90.0
+               EndSect  // FAIRLEAD_6
+
+               [FAIRLEAD_7]
+                  Touched = 1
+                  name = 'Fairlead 7'
+                  x = 76.0
+                  y = -12.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // FAIRLEAD_7
+
+               [FAIRLEAD_8]
+                  Touched = 1
+                  name = 'Fairlead 8'
+                  x = -91.0
+                  y = -13.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // FAIRLEAD_8
+
+               [FAIRLEAD_9]
+                  Touched = 1
+                  name = 'Fairlead 9'
+                  x = -70.0
+                  y = -13.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // FAIRLEAD_9
+
+               [FAIRLEAD_10]
+                  Touched = 1
+                  name = 'Fairlead 10'
+                  x = 53.0
+                  y = -13.0
+                  z = 0.0
+                  symbol_orientation = 0.0
+               EndSect  // FAIRLEAD_10
+
+            EndSect  // FAIRLEADS
+
+            [WINCHES]
+               Touched = 1
+               MzSEPfsListItemCount = 10
+               number_of_winches = 10
+               [WINCH_1]
+                  Touched = 1
+                  name = 'Winch 1'
+                  x = -93.0
+                  y = 0.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // WINCH_1
+
+               [WINCH_2]
+                  Touched = 1
+                  name = 'Winch 2'
+                  x = -93.0
+                  y = -1.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // WINCH_2
+
+               [WINCH_3]
+                  Touched = 1
+                  name = 'Winch 3'
+                  x = -95.0
+                  y = -5.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // WINCH_3
+
+               [WINCH_4]
+                  Touched = 1
+                  name = 'Winch 4'
+                  x = 84.0
+                  y = -1.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // WINCH_4
+
+               [WINCH_5]
+                  Touched = 1
+                  name = 'Winch 5'
+                  x = 91.0
+                  y = -3.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // WINCH_5
+
+               [WINCH_6]
+                  Touched = 1
+                  name = 'Winch 6'
+                  x = 92.0
+                  y = 0.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // WINCH_6
+
+               [WINCH_7]
+                  Touched = 1
+                  name = 'Winch 7'
+                  x = 76.0
+                  y = -5.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // WINCH_7
+
+               [WINCH_8]
+                  Touched = 1
+                  name = 'Winch 8'
+                  x = -91.0
+                  y = -9.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // WINCH_8
+
+               [WINCH_9]
+                  Touched = 1
+                  name = 'Winch 9'
+                  x = -77.0
+                  y = -9.0
+                  z = 23.6
+                  symbol_orientation = 0.0
+               EndSect  // WINCH_9
+
+               [WINCH_10]
+                  Touched = 1
+                  name = 'Winch 10'
+                  x = 63.0
+                  y = -9.0
+                  z = 0.0
+                  symbol_orientation = 0.0
+               EndSect  // WINCH_10
+
+            EndSect  // WINCHES
+
+            [CHAINS]
+               Touched = 1
+               MzSEPfsListItemCount = 0
+               number_of_chains = 0
+            EndSect  // CHAINS
+
+            [FENDER_CONNECTIONS]
+               Touched = 1
+               MzSEPfsListItemCount = 0
+               number_of_fender_connections = 0
+            EndSect  // FENDER_CONNECTIONS
+
+         EndSect  // SPATIAL_ATTRIBUTES
+
+      EndSect  // VESSEL_1
+
+   EndSect  // VESSELS
+
+   [VESSEL_VESSEL_DATA]
+      Touched = 0
+      min_x = -100.0
+      max_x = 100.0
+      min_y = -100.0
+      max_y = 100.0
+      x0 = 0.0
+      x1 = 0.0
+      y0 = 0.0
+      y1 = 0.0
+      [VESSEL_VESSEL_FENDERS]
+         Touched = 0
+         MzSEPfsListItemCount = 0
+         number_of_vessel_vessel_fenders = 0
+      EndSect  // VESSEL_VESSEL_FENDERS
+
+      [VESSEL_VESSEL_LINES]
+         Touched = 0
+         MzSEPfsListItemCount = 0
+         number_of_vessel_vessel_lines = 0
+      EndSect  // VESSEL_VESSEL_LINES
+
+   EndSect  // VESSEL_VESSEL_DATA
+
+   [PORT_DATA]
+      Touched = 1
+      x0 = 3272.0
+      x1 = 3332.0
+      y0 = 2919.0
+      y1 = 2992.0
+      [BOLLARDS]
+         Touched = 1
+         MzSEPfsListItemCount = 15
+         coordinate_type = 'NON-UTM'
+         number_of_bollards = 15
+         [BOLLARD_1]
+            Touched = 1
+            name = 'Bollard 1'
+            x = 3311.0
+            y = 3156.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_1
+
+         [BOLLARD_2]
+            Touched = 1
+            name = 'Bollard 2'
+            x = 3311.0
+            y = 3136.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_2
+
+         [BOLLARD_3]
+            Touched = 1
+            name = 'Bollard 3'
+            x = 3311.0
+            y = 3115.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_3
+
+         [BOLLARD_4]
+            Touched = 1
+            name = 'Bollard 4'
+            x = 3311.0
+            y = 3096.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_4
+
+         [BOLLARD_5]
+            Touched = 1
+            name = 'Bollard 5'
+            x = 3311.0
+            y = 3076.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_5
+
+         [BOLLARD_6]
+            Touched = 1
+            name = 'Bollard 6'
+            x = 3311.0
+            y = 3056.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_6
+
+         [BOLLARD_7]
+            Touched = 1
+            name = 'Bollard 7'
+            x = 3311.0
+            y = 3036.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_7
+
+         [BOLLARD_8]
+            Touched = 1
+            name = 'Bollard 8'
+            x = 3311.0
+            y = 3016.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_8
+
+         [BOLLARD_9]
+            Touched = 1
+            name = 'Bollard 9'
+            x = 3311.0
+            y = 2996.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_9
+
+         [BOLLARD_10]
+            Touched = 1
+            name = 'Bollard 10'
+            x = 3311.0
+            y = 2976.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_10
+
+         [BOLLARD_11]
+            Touched = 1
+            name = 'Bollard 11'
+            x = 3311.0
+            y = 2956.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_11
+
+         [BOLLARD_12]
+            Touched = 1
+            name = 'Bollard 12'
+            x = 3311.0
+            y = 2936.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_12
+
+         [BOLLARD_13]
+            Touched = 1
+            name = 'Bollard 13'
+            x = 3311.0
+            y = 2916.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_13
+
+         [BOLLARD_14]
+            Touched = 1
+            name = 'Bollard 14'
+            x = 3311.0
+            y = 2896.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_14
+
+         [BOLLARD_15]
+            Touched = 1
+            name = 'Bollard 15'
+            x = 3311.0
+            y = 2876.0
+            z = 4.0
+            symbol_orientation = 90.0
+            bollard_profile = 1
+         EndSect  // BOLLARD_15
+
+      EndSect  // BOLLARDS
+
+      [FENDERS]
+         Touched = 1
+         MzSEPfsListItemCount = 18
+         coordinate_type = 'NON-UTM'
+         number_of_fenders = 18
+         [FENDER_1]
+            Touched = 1
+            name = 'Fender 1'
+            x = 3312.0
+            y = 3115.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_1
+
+         [FENDER_2]
+            Touched = 1
+            name = 'Fender 2'
+            x = 3312.0
+            y = 3106.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_2
+
+         [FENDER_3]
+            Touched = 1
+            name = 'Fender 3'
+            x = 3312.0
+            y = 3096.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_3
+
+         [FENDER_4]
+            Touched = 1
+            name = 'Fender 4'
+            x = 3312.0
+            y = 3086.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_4
+
+         [FENDER_5]
+            Touched = 1
+            name = 'Fender 5'
+            x = 3312.0
+            y = 3076.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_5
+
+         [FENDER_6]
+            Touched = 1
+            name = 'Fender 6'
+            x = 3312.0
+            y = 3066.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_6
+
+         [FENDER_7]
+            Touched = 1
+            name = 'Fender 7'
+            x = 3312.0
+            y = 3056.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_7
+
+         [FENDER_8]
+            Touched = 1
+            name = 'Fender 8'
+            x = 3312.0
+            y = 3046.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_8
+
+         [FENDER_9]
+            Touched = 1
+            name = 'Fender 9'
+            x = 3312.0
+            y = 3036.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_9
+
+         [FENDER_10]
+            Touched = 1
+            name = 'Fender 10'
+            x = 3312.0
+            y = 3026.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_10
+
+         [FENDER_11]
+            Touched = 1
+            name = 'Fender 11'
+            x = 3312.0
+            y = 3016.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_11
+
+         [FENDER_12]
+            Touched = 1
+            name = 'Fender 12'
+            x = 3312.0
+            y = 3006.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_12
+
+         [FENDER_13]
+            Touched = 1
+            name = 'Fender 13'
+            x = 3312.0
+            y = 2996.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_13
+
+         [FENDER_14]
+            Touched = 1
+            name = 'Fender 14'
+            x = 3312.0
+            y = 2986.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_14
+
+         [FENDER_15]
+            Touched = 1
+            name = 'Fender 15'
+            x = 3312.0
+            y = 2976.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_15
+
+         [FENDER_16]
+            Touched = 1
+            name = 'Fender 16'
+            x = 3312.0
+            y = 2966.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_16
+
+         [FENDER_17]
+            Touched = 1
+            name = 'Fender 17'
+            x = 3312.0
+            y = 2956.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_17
+
+         [FENDER_18]
+            Touched = 1
+            name = 'Fender 18'
+            x = 3312.0
+            y = 2946.0
+            z = 1.9
+            direction = 0.0
+            fender_profile = 1
+            vessel_affected = 1
+         EndSect  // FENDER_18
+
+      EndSect  // FENDERS
+
+   EndSect  // PORT_DATA
+
+   [MOORING_SETUP]
+      Touched = 1
+      [VESSEL_POSITION]
+         Touched = 1
+         coordinate_type = 'NON-UTM'
+         position_type = 1
+         x_position = 3328.3
+         y_position = 3020.0
+         rotation_type = 1
+         rotation = -90.0
+         x0 = 3281.0
+         x1 = 3351.0
+         y0 = 3074.0
+         y1 = 3150.0
+      EndSect  // VESSEL_POSITION
+
+      [VESSEL_BERTH_LINES]
+         Touched = 1
+         MzSEPfsListItemCount = 8
+         number_of_lines = 8
+         [LINE_1]
+            Touched = 1
+            name = 'Line 1'
+            vessel = 1
+            bollard = 1
+            fairlead = 1
+            winch = 1
+            line_profile = 1
+            line_tension = 11.0
+            tail_profile = 0
+            tail_length = 5.0
+         EndSect  // LINE_1
+
+         [LINE_2]
+            Touched = 1
+            name = 'Line 2'
+            vessel = 1
+            bollard = 2
+            fairlead = 2
+            winch = 2
+            line_profile = 1
+            line_tension = 11.0
+            tail_profile = 0
+            tail_length = 5.0
+         EndSect  // LINE_2
+
+         [LINE_3]
+            Touched = 1
+            name = 'Line 4'
+            vessel = 1
+            bollard = 4
+            fairlead = 8
+            winch = 8
+            line_profile = 1
+            line_tension = 8.0
+            tail_profile = 0
+            tail_length = 5.0
+         EndSect  // LINE_3
+
+         [LINE_4]
+            Touched = 1
+            name = 'Line 5'
+            vessel = 1
+            bollard = 6
+            fairlead = 9
+            winch = 9
+            line_profile = 1
+            line_tension = 8.0
+            tail_profile = 0
+            tail_length = 5.0
+         EndSect  // LINE_4
+
+         [LINE_5]
+            Touched = 1
+            name = 'Line 6'
+            vessel = 1
+            bollard = 9
+            fairlead = 10
+            winch = 10
+            line_profile = 1
+            line_tension = 8.0
+            tail_profile = 0
+            tail_length = 5.0
+         EndSect  // LINE_5
+
+         [LINE_6]
+            Touched = 1
+            name = 'Line 7'
+            vessel = 1
+            bollard = 11
+            fairlead = 7
+            winch = 7
+            line_profile = 1
+            line_tension = 8.0
+            tail_profile = 0
+            tail_length = 5.0
+         EndSect  // LINE_6
+
+         [LINE_7]
+            Touched = 1
+            name = 'Line 9'
+            vessel = 1
+            bollard = 13
+            fairlead = 5
+            winch = 5
+            line_profile = 1
+            line_tension = 11.0
+            tail_profile = 0
+            tail_length = 5.0
+         EndSect  // LINE_7
+
+         [LINE_8]
+            Touched = 1
+            name = 'Line 10'
+            vessel = 1
+            bollard = 14
+            fairlead = 6
+            winch = 6
+            line_profile = 1
+            line_tension = 11.0
+            tail_profile = 0
+            tail_length = 5.0
+         EndSect  // LINE_8
+
+      EndSect  // VESSEL_BERTH_LINES
+
+   EndSect  // MOORING_SETUP
+
+   [ENVIRONMENTAL_CONDITIONS]
+      [PHYSICAL_PARAMETERS]
+         Touched = 1
+         rho_water = 1020.0
+         rho_air = 1.28
+         viscosity_water = 1e-06
+         viscosity_air = 1.48e-05
+      EndSect  // PHYSICAL_PARAMETERS
+
+      [DRIFT_FORCES]
+         Touched = 1
+         include = 0
+      EndSect  // DRIFT_FORCES
+
+      [WAVE]
+         Touched = 1
+         type = 1
+         include_warm_up_down = 0
+         format = 3
+         number_of_waves = 1
+         lower_frequency = 0
+         upper_frequency = 0.5
+         fft_size = 2048
+         file_name = |.\H1.2Tp12m0.9thet155.dfs2|
+         item_count = 3
+         item_numbers = 1, 2, 3
+         item1_name = 'Water level'
+         item2_name = 'P flux'
+         item3_name = 'Q flux'
+         mean_wave_direction = 0.0
+      EndSect  // WAVE
+
+      [CURRENT]
+         Touched = 1
+         type = 0
+         include_warm_up_down = 1
+         type_of_current = 1
+         format = 1
+         file_name = ||
+         item_numbers = 1, 2
+         item1_name = ''
+         item2_name = ''
+         [VESSEL_1]
+            Touched = 0
+            drag_coefficients = 1.1, 1.3
+         EndSect  // VESSEL_1
+
+      EndSect  // CURRENT
+
+      [WIND]
+         Touched = 1
+         type = 1
+         include_warm_up_down = 0
+         type_of_wind = 1
+         format = 1
+         file_name = |..\..\wind200_290-3.dfs0|
+         item_numbers = 1, 2
+         item1_name = 'wind sp'
+         item2_name = 'wind dir'
+      EndSect  // WIND
+
+   EndSect  // ENVIRONMENTAL_CONDITIONS
+
+   [OPTION_PARAMETERS]
+      Touched = 0
+   EndSect  // OPTION_PARAMETERS
+
+   [CONVERGENCE_PARAMETERS]
+      Touched = 1
+      max_number_of_iterations = 1000
+      line_convergence_threshold = 0.5
+   EndSect  // CONVERGENCE_PARAMETERS
+
+   [VESSEL_DISPLACEMENTS]
+      Touched = 1
+      [VESSEL_1]
+         Touched = 0
+         displacement = -1.198129057884216, 0.004770454950630665, -0.005388546269387007, 0.3329715430736542, 0.001394965103827417, -0.003159166313707829
+      EndSect  // VESSEL_1
+
+   EndSect  // VESSEL_DISPLACEMENTS
+
+   [CONVERGENCE_OUTPUT]
+      Touched = 1
+      [PRETENSION_DEVIATION]
+         Touched = 0
+         include = 1
+         file_name = 'Convergence_line_pretension_deviation.dfs0'
+         Customized = 0
+      EndSect  // PRETENSION_DEVIATION
+
+      [LINE_FORCES]
+         Touched = 0
+         include = 1
+         file_name = 'Convergence_lforces.dfs0'
+         Customized = 0
+      EndSect  // LINE_FORCES
+
+      [FENDER_FORCES]
+         Touched = 0
+         include = 1
+         file_name = 'Convergence_fforces.dfs0'
+         Customized = 0
+      EndSect  // FENDER_FORCES
+
+      [BOLLARD_FORCES]
+         Touched = 0
+         include = 1
+         file_name = 'Convergence_bforces.dfs0'
+         Customized = 0
+      EndSect  // BOLLARD_FORCES
+
+      [VESSEL_1]
+         Touched = 1
+         MzSEPfsListItemCount = 4
+         [VESSEL_MOTION]
+            Touched = 1
+            include = 1
+            file_name = 'Convergence_Vessel 1_motions.dfs0'
+            Customized = 0
+         EndSect  // VESSEL_MOTION
+
+         [MOORING_FORCE]
+            Touched = 1
+            include = 1
+            file_name = 'Convergence_Vessel 1_mforces.dfs0'
+            Customized = 0
+         EndSect  // MOORING_FORCE
+
+         [EXTERNAL_FORCE]
+            Touched = 1
+            include = 1
+            file_name = 'Convergence_Vessel 1_ext_forces.dfs0'
+            Customized = 0
+         EndSect  // EXTERNAL_FORCE
+
+         [CHAIN_FORCES]
+            Touched = 1
+            include = 0
+            file_name = 'Convergence_Vessel 1_chain_forces.dfs0'
+            Customized = 0
+         EndSect  // CHAIN_FORCES
+
+      EndSect  // VESSEL_1
+
+   EndSect  // CONVERGENCE_OUTPUT
+
+   [FINAL_OUTPUT]
+      Touched = 1
+      [LINE_POSITIONS]
+         Touched = 0
+         include = 1
+         file_name = 'lpositions.dfs1'
+         Customized = 0
+      EndSect  // LINE_POSITIONS
+
+      [LINE_FORCES]
+         Touched = 0
+         include = 1
+         file_name = 'lforces.dfs0'
+         Customized = 0
+      EndSect  // LINE_FORCES
+
+      [FENDER_FORCES]
+         Touched = 0
+         include = 1
+         file_name = 'fforces.dfs0'
+         Customized = 0
+      EndSect  // FENDER_FORCES
+
+      [BOLLARD_FORCES]
+         Touched = 0
+         include = 1
+         file_name = 'bforces.dfs0'
+         Customized = 0
+      EndSect  // BOLLARD_FORCES
+
+      vessel_motion_type = 1
+      [VESSEL_1]
+         Touched = 1
+         MzSEPfsListItemCount = 6
+         [VESSEL_MOTION]
+            Touched = 1
+            include = 1
+            file_name = 'Vessel 1_motions.dfs0'
+            Customized = 0
+         EndSect  // VESSEL_MOTION
+
+         [MOORING_FORCE]
+            Touched = 1
+            include = 1
+            file_name = 'Vessel 1_mforces.dfs0'
+            Customized = 0
+         EndSect  // MOORING_FORCE
+
+         [EXTERNAL_FORCE]
+            Touched = 1
+            include = 1
+            file_name = 'Vessel 1_ext_forces.dfs0'
+            Customized = 0
+         EndSect  // EXTERNAL_FORCE
+
+         [ELEVATION]
+            Touched = 1
+            include = 1
+            file_name = 'Vessel 1_selev.dfs0'
+            Customized = 0
+         EndSect  // ELEVATION
+
+         [DIFFRACTION_FORCE]
+            Touched = 1
+            include = 1
+            file_name = 'Vessel 1_diff_forces.dfs0'
+            Customized = 0
+         EndSect  // DIFFRACTION_FORCE
+
+         [CHAIN_FORCES]
+            Touched = 1
+            include = 0
+            file_name = 'Vessel 1_chain_forces.dfs0'
+            Customized = 0
+         EndSect  // CHAIN_FORCES
+
+      EndSect  // VESSEL_1
+
+   EndSect  // FINAL_OUTPUT
+
+   [PROPERTIES]
+      Touched = 0
+      [LABEL_DISPLAY]
+         Touched = 0
+         show_line_labels = 0
+         show_fender_labels = 0
+         show_vessel_vessel_line_labels = 0
+         show_vessel_vessel_fender_labels = 0
+         show_chain_labels = 0
+         show_winch_labels = 0
+         show_fairlead_labels = 0
+         show_bollard_labels = 0
+         show_vessel_label = 0
+      EndSect  // LABEL_DISPLAY
+
+   EndSect  // PROPERTIES
+
+EndSect  // M21MooringAnalysis
+

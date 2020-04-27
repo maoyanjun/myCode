@@ -16,5 +16,7 @@ while i<1000;
     i=i+1;
 end
 L
+k=2*pi/L
+k
 disp('按任意键继续下一组数据处理')
 pause

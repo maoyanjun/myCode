@@ -1,0 +1,1614 @@
+sets
+(
+    gauge_0
+    {
+        type         face;
+        axis         y;
+        start        (0.1 -0.3 0.05);
+        end          (0.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_1
+    {
+        type         face;
+        axis         y;
+        start        (0.2 -0.3 0.05);
+        end          (0.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_2
+    {
+        type         face;
+        axis         y;
+        start        (0.3 -0.3 0.05);
+        end          (0.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_3
+    {
+        type         face;
+        axis         y;
+        start        (0.4 -0.3 0.05);
+        end          (0.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_4
+    {
+        type         face;
+        axis         y;
+        start        (0.5 -0.3 0.05);
+        end          (0.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_5
+    {
+        type         face;
+        axis         y;
+        start        (0.6 -0.3 0.05);
+        end          (0.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_6
+    {
+        type         face;
+        axis         y;
+        start        (0.7 -0.3 0.05);
+        end          (0.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_7
+    {
+        type         face;
+        axis         y;
+        start        (0.8 -0.3 0.05);
+        end          (0.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_8
+    {
+        type         face;
+        axis         y;
+        start        (0.9 -0.3 0.05);
+        end          (0.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_9
+    {
+        type         face;
+        axis         y;
+        start        (1 -0.3 0.05);
+        end          (1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_10
+    {
+        type         face;
+        axis         y;
+        start        (1.1 -0.3 0.05);
+        end          (1.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_11
+    {
+        type         face;
+        axis         y;
+        start        (1.2 -0.3 0.05);
+        end          (1.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_12
+    {
+        type         face;
+        axis         y;
+        start        (1.3 -0.3 0.05);
+        end          (1.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_13
+    {
+        type         face;
+        axis         y;
+        start        (1.4 -0.3 0.05);
+        end          (1.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_14
+    {
+        type         face;
+        axis         y;
+        start        (1.5 -0.3 0.05);
+        end          (1.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_15
+    {
+        type         face;
+        axis         y;
+        start        (1.6 -0.3 0.05);
+        end          (1.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_16
+    {
+        type         face;
+        axis         y;
+        start        (1.7 -0.3 0.05);
+        end          (1.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_17
+    {
+        type         face;
+        axis         y;
+        start        (1.8 -0.3 0.05);
+        end          (1.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_18
+    {
+        type         face;
+        axis         y;
+        start        (1.9 -0.3 0.05);
+        end          (1.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_19
+    {
+        type         face;
+        axis         y;
+        start        (2 -0.3 0.05);
+        end          (2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_20
+    {
+        type         face;
+        axis         y;
+        start        (2.1 -0.3 0.05);
+        end          (2.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_21
+    {
+        type         face;
+        axis         y;
+        start        (2.2 -0.3 0.05);
+        end          (2.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_22
+    {
+        type         face;
+        axis         y;
+        start        (2.3 -0.3 0.05);
+        end          (2.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_23
+    {
+        type         face;
+        axis         y;
+        start        (2.4 -0.3 0.05);
+        end          (2.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_24
+    {
+        type         face;
+        axis         y;
+        start        (2.5 -0.3 0.05);
+        end          (2.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_25
+    {
+        type         face;
+        axis         y;
+        start        (2.6 -0.3 0.05);
+        end          (2.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_26
+    {
+        type         face;
+        axis         y;
+        start        (2.7 -0.3 0.05);
+        end          (2.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_27
+    {
+        type         face;
+        axis         y;
+        start        (2.8 -0.3 0.05);
+        end          (2.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_28
+    {
+        type         face;
+        axis         y;
+        start        (2.9 -0.3 0.05);
+        end          (2.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_29
+    {
+        type         face;
+        axis         y;
+        start        (3 -0.3 0.05);
+        end          (3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_30
+    {
+        type         face;
+        axis         y;
+        start        (3.1 -0.3 0.05);
+        end          (3.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_31
+    {
+        type         face;
+        axis         y;
+        start        (3.2 -0.3 0.05);
+        end          (3.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_32
+    {
+        type         face;
+        axis         y;
+        start        (3.3 -0.3 0.05);
+        end          (3.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_33
+    {
+        type         face;
+        axis         y;
+        start        (3.4 -0.3 0.05);
+        end          (3.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_34
+    {
+        type         face;
+        axis         y;
+        start        (3.5 -0.3 0.05);
+        end          (3.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_35
+    {
+        type         face;
+        axis         y;
+        start        (3.6 -0.3 0.05);
+        end          (3.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_36
+    {
+        type         face;
+        axis         y;
+        start        (3.7 -0.3 0.05);
+        end          (3.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_37
+    {
+        type         face;
+        axis         y;
+        start        (3.8 -0.3 0.05);
+        end          (3.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_38
+    {
+        type         face;
+        axis         y;
+        start        (3.9 -0.3 0.05);
+        end          (3.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_39
+    {
+        type         face;
+        axis         y;
+        start        (4 -0.3 0.05);
+        end          (4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_40
+    {
+        type         face;
+        axis         y;
+        start        (4.1 -0.3 0.05);
+        end          (4.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_41
+    {
+        type         face;
+        axis         y;
+        start        (4.2 -0.3 0.05);
+        end          (4.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_42
+    {
+        type         face;
+        axis         y;
+        start        (4.3 -0.3 0.05);
+        end          (4.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_43
+    {
+        type         face;
+        axis         y;
+        start        (4.4 -0.3 0.05);
+        end          (4.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_44
+    {
+        type         face;
+        axis         y;
+        start        (4.5 -0.3 0.05);
+        end          (4.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_45
+    {
+        type         face;
+        axis         y;
+        start        (4.6 -0.3 0.05);
+        end          (4.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_46
+    {
+        type         face;
+        axis         y;
+        start        (4.7 -0.3 0.05);
+        end          (4.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_47
+    {
+        type         face;
+        axis         y;
+        start        (4.8 -0.3 0.05);
+        end          (4.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_48
+    {
+        type         face;
+        axis         y;
+        start        (4.9 -0.3 0.05);
+        end          (4.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_49
+    {
+        type         face;
+        axis         y;
+        start        (5 -0.3 0.05);
+        end          (5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_50
+    {
+        type         face;
+        axis         y;
+        start        (5.1 -0.3 0.05);
+        end          (5.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_51
+    {
+        type         face;
+        axis         y;
+        start        (5.2 -0.3 0.05);
+        end          (5.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_52
+    {
+        type         face;
+        axis         y;
+        start        (5.3 -0.3 0.05);
+        end          (5.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_53
+    {
+        type         face;
+        axis         y;
+        start        (5.4 -0.3 0.05);
+        end          (5.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_54
+    {
+        type         face;
+        axis         y;
+        start        (5.5 -0.3 0.05);
+        end          (5.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_55
+    {
+        type         face;
+        axis         y;
+        start        (5.6 -0.3 0.05);
+        end          (5.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_56
+    {
+        type         face;
+        axis         y;
+        start        (5.7 -0.3 0.05);
+        end          (5.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_57
+    {
+        type         face;
+        axis         y;
+        start        (5.8 -0.3 0.05);
+        end          (5.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_58
+    {
+        type         face;
+        axis         y;
+        start        (5.9 -0.3 0.05);
+        end          (5.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_59
+    {
+        type         face;
+        axis         y;
+        start        (6 -0.3 0.05);
+        end          (6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_60
+    {
+        type         face;
+        axis         y;
+        start        (6.1 -0.3 0.05);
+        end          (6.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_61
+    {
+        type         face;
+        axis         y;
+        start        (6.2 -0.3 0.05);
+        end          (6.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_62
+    {
+        type         face;
+        axis         y;
+        start        (6.3 -0.3 0.05);
+        end          (6.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_63
+    {
+        type         face;
+        axis         y;
+        start        (6.4 -0.3 0.05);
+        end          (6.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_64
+    {
+        type         face;
+        axis         y;
+        start        (6.5 -0.3 0.05);
+        end          (6.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_65
+    {
+        type         face;
+        axis         y;
+        start        (6.6 -0.3 0.05);
+        end          (6.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_66
+    {
+        type         face;
+        axis         y;
+        start        (6.7 -0.3 0.05);
+        end          (6.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_67
+    {
+        type         face;
+        axis         y;
+        start        (6.8 -0.3 0.05);
+        end          (6.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_68
+    {
+        type         face;
+        axis         y;
+        start        (6.9 -0.3 0.05);
+        end          (6.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_69
+    {
+        type         face;
+        axis         y;
+        start        (7 -0.3 0.05);
+        end          (7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_70
+    {
+        type         face;
+        axis         y;
+        start        (7.1 -0.3 0.05);
+        end          (7.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_71
+    {
+        type         face;
+        axis         y;
+        start        (7.2 -0.3 0.05);
+        end          (7.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_72
+    {
+        type         face;
+        axis         y;
+        start        (7.3 -0.3 0.05);
+        end          (7.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_73
+    {
+        type         face;
+        axis         y;
+        start        (7.4 -0.3 0.05);
+        end          (7.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_74
+    {
+        type         face;
+        axis         y;
+        start        (7.5 -0.3 0.05);
+        end          (7.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_75
+    {
+        type         face;
+        axis         y;
+        start        (7.6 -0.3 0.05);
+        end          (7.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_76
+    {
+        type         face;
+        axis         y;
+        start        (7.7 -0.3 0.05);
+        end          (7.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_77
+    {
+        type         face;
+        axis         y;
+        start        (7.8 -0.3 0.05);
+        end          (7.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_78
+    {
+        type         face;
+        axis         y;
+        start        (7.9 -0.3 0.05);
+        end          (7.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_79
+    {
+        type         face;
+        axis         y;
+        start        (8 -0.3 0.05);
+        end          (8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_80
+    {
+        type         face;
+        axis         y;
+        start        (8.1 -0.3 0.05);
+        end          (8.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_81
+    {
+        type         face;
+        axis         y;
+        start        (8.2 -0.3 0.05);
+        end          (8.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_82
+    {
+        type         face;
+        axis         y;
+        start        (8.3 -0.3 0.05);
+        end          (8.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_83
+    {
+        type         face;
+        axis         y;
+        start        (8.4 -0.3 0.05);
+        end          (8.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_84
+    {
+        type         face;
+        axis         y;
+        start        (8.5 -0.3 0.05);
+        end          (8.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_85
+    {
+        type         face;
+        axis         y;
+        start        (8.6 -0.3 0.05);
+        end          (8.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_86
+    {
+        type         face;
+        axis         y;
+        start        (8.7 -0.3 0.05);
+        end          (8.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_87
+    {
+        type         face;
+        axis         y;
+        start        (8.8 -0.3 0.05);
+        end          (8.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_88
+    {
+        type         face;
+        axis         y;
+        start        (8.9 -0.3 0.05);
+        end          (8.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_89
+    {
+        type         face;
+        axis         y;
+        start        (9 -0.3 0.05);
+        end          (9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_90
+    {
+        type         face;
+        axis         y;
+        start        (9.1 -0.3 0.05);
+        end          (9.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_91
+    {
+        type         face;
+        axis         y;
+        start        (9.2 -0.3 0.05);
+        end          (9.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_92
+    {
+        type         face;
+        axis         y;
+        start        (9.3 -0.3 0.05);
+        end          (9.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_93
+    {
+        type         face;
+        axis         y;
+        start        (9.4 -0.3 0.05);
+        end          (9.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_94
+    {
+        type         face;
+        axis         y;
+        start        (9.5 -0.3 0.05);
+        end          (9.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_95
+    {
+        type         face;
+        axis         y;
+        start        (9.6 -0.3 0.05);
+        end          (9.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_96
+    {
+        type         face;
+        axis         y;
+        start        (9.7 -0.3 0.05);
+        end          (9.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_97
+    {
+        type         face;
+        axis         y;
+        start        (9.8 -0.3 0.05);
+        end          (9.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_98
+    {
+        type         face;
+        axis         y;
+        start        (9.9 -0.3 0.05);
+        end          (9.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_99
+    {
+        type         face;
+        axis         y;
+        start        (10 -0.3 0.05);
+        end          (10 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_100
+    {
+        type         face;
+        axis         y;
+        start        (10.1 -0.3 0.05);
+        end          (10.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_101
+    {
+        type         face;
+        axis         y;
+        start        (10.2 -0.3 0.05);
+        end          (10.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_102
+    {
+        type         face;
+        axis         y;
+        start        (10.3 -0.3 0.05);
+        end          (10.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_103
+    {
+        type         face;
+        axis         y;
+        start        (10.4 -0.3 0.05);
+        end          (10.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_104
+    {
+        type         face;
+        axis         y;
+        start        (10.5 -0.3 0.05);
+        end          (10.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_105
+    {
+        type         face;
+        axis         y;
+        start        (10.6 -0.3 0.05);
+        end          (10.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_106
+    {
+        type         face;
+        axis         y;
+        start        (10.7 -0.3 0.05);
+        end          (10.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_107
+    {
+        type         face;
+        axis         y;
+        start        (10.8 -0.3 0.05);
+        end          (10.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_108
+    {
+        type         face;
+        axis         y;
+        start        (10.9 -0.3 0.05);
+        end          (10.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_109
+    {
+        type         face;
+        axis         y;
+        start        (11 -0.3 0.05);
+        end          (11 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_110
+    {
+        type         face;
+        axis         y;
+        start        (11.1 -0.3 0.05);
+        end          (11.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_111
+    {
+        type         face;
+        axis         y;
+        start        (11.2 -0.3 0.05);
+        end          (11.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_112
+    {
+        type         face;
+        axis         y;
+        start        (11.3 -0.3 0.05);
+        end          (11.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_113
+    {
+        type         face;
+        axis         y;
+        start        (11.4 -0.3 0.05);
+        end          (11.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_114
+    {
+        type         face;
+        axis         y;
+        start        (11.5 -0.3 0.05);
+        end          (11.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_115
+    {
+        type         face;
+        axis         y;
+        start        (11.6 -0.3 0.05);
+        end          (11.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_116
+    {
+        type         face;
+        axis         y;
+        start        (11.7 -0.3 0.05);
+        end          (11.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_117
+    {
+        type         face;
+        axis         y;
+        start        (11.8 -0.3 0.05);
+        end          (11.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_118
+    {
+        type         face;
+        axis         y;
+        start        (11.9 -0.3 0.05);
+        end          (11.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_119
+    {
+        type         face;
+        axis         y;
+        start        (12 -0.3 0.05);
+        end          (12 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_120
+    {
+        type         face;
+        axis         y;
+        start        (12.1 -0.3 0.05);
+        end          (12.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_121
+    {
+        type         face;
+        axis         y;
+        start        (12.2 -0.3 0.05);
+        end          (12.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_122
+    {
+        type         face;
+        axis         y;
+        start        (12.3 -0.3 0.05);
+        end          (12.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_123
+    {
+        type         face;
+        axis         y;
+        start        (12.4 -0.3 0.05);
+        end          (12.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_124
+    {
+        type         face;
+        axis         y;
+        start        (12.5 -0.3 0.05);
+        end          (12.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_125
+    {
+        type         face;
+        axis         y;
+        start        (12.6 -0.3 0.05);
+        end          (12.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_126
+    {
+        type         face;
+        axis         y;
+        start        (12.7 -0.3 0.05);
+        end          (12.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_127
+    {
+        type         face;
+        axis         y;
+        start        (12.8 -0.3 0.05);
+        end          (12.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_128
+    {
+        type         face;
+        axis         y;
+        start        (12.9 -0.3 0.05);
+        end          (12.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_129
+    {
+        type         face;
+        axis         y;
+        start        (13 -0.3 0.05);
+        end          (13 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_130
+    {
+        type         face;
+        axis         y;
+        start        (13.1 -0.3 0.05);
+        end          (13.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_131
+    {
+        type         face;
+        axis         y;
+        start        (13.2 -0.3 0.05);
+        end          (13.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_132
+    {
+        type         face;
+        axis         y;
+        start        (13.3 -0.3 0.05);
+        end          (13.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_133
+    {
+        type         face;
+        axis         y;
+        start        (13.4 -0.3 0.05);
+        end          (13.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_134
+    {
+        type         face;
+        axis         y;
+        start        (13.5 -0.3 0.05);
+        end          (13.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_135
+    {
+        type         face;
+        axis         y;
+        start        (13.6 -0.3 0.05);
+        end          (13.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_136
+    {
+        type         face;
+        axis         y;
+        start        (13.7 -0.3 0.05);
+        end          (13.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_137
+    {
+        type         face;
+        axis         y;
+        start        (13.8 -0.3 0.05);
+        end          (13.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_138
+    {
+        type         face;
+        axis         y;
+        start        (13.9 -0.3 0.05);
+        end          (13.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_139
+    {
+        type         face;
+        axis         y;
+        start        (14 -0.3 0.05);
+        end          (14 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_140
+    {
+        type         face;
+        axis         y;
+        start        (14.1 -0.3 0.05);
+        end          (14.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_141
+    {
+        type         face;
+        axis         y;
+        start        (14.2 -0.3 0.05);
+        end          (14.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_142
+    {
+        type         face;
+        axis         y;
+        start        (14.3 -0.3 0.05);
+        end          (14.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_143
+    {
+        type         face;
+        axis         y;
+        start        (14.4 -0.3 0.05);
+        end          (14.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_144
+    {
+        type         face;
+        axis         y;
+        start        (14.5 -0.3 0.05);
+        end          (14.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_145
+    {
+        type         face;
+        axis         y;
+        start        (14.6 -0.3 0.05);
+        end          (14.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_146
+    {
+        type         face;
+        axis         y;
+        start        (14.7 -0.3 0.05);
+        end          (14.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_147
+    {
+        type         face;
+        axis         y;
+        start        (14.8 -0.3 0.05);
+        end          (14.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_148
+    {
+        type         face;
+        axis         y;
+        start        (14.9 -0.3 0.05);
+        end          (14.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_149
+    {
+        type         face;
+        axis         y;
+        start        (15 -0.3 0.05);
+        end          (15 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_150
+    {
+        type         face;
+        axis         y;
+        start        (15.1 -0.3 0.05);
+        end          (15.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_151
+    {
+        type         face;
+        axis         y;
+        start        (15.2 -0.3 0.05);
+        end          (15.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_152
+    {
+        type         face;
+        axis         y;
+        start        (15.3 -0.3 0.05);
+        end          (15.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_153
+    {
+        type         face;
+        axis         y;
+        start        (15.4 -0.3 0.05);
+        end          (15.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_154
+    {
+        type         face;
+        axis         y;
+        start        (15.5 -0.3 0.05);
+        end          (15.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_155
+    {
+        type         face;
+        axis         y;
+        start        (15.6 -0.3 0.05);
+        end          (15.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_156
+    {
+        type         face;
+        axis         y;
+        start        (15.7 -0.3 0.05);
+        end          (15.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_157
+    {
+        type         face;
+        axis         y;
+        start        (15.8 -0.3 0.05);
+        end          (15.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_158
+    {
+        type         face;
+        axis         y;
+        start        (15.9 -0.3 0.05);
+        end          (15.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_159
+    {
+        type         face;
+        axis         y;
+        start        (16 -0.3 0.05);
+        end          (16 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_160
+    {
+        type         face;
+        axis         y;
+        start        (16.1 -0.3 0.05);
+        end          (16.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_161
+    {
+        type         face;
+        axis         y;
+        start        (16.2 -0.3 0.05);
+        end          (16.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_162
+    {
+        type         face;
+        axis         y;
+        start        (16.3 -0.3 0.05);
+        end          (16.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_163
+    {
+        type         face;
+        axis         y;
+        start        (16.4 -0.3 0.05);
+        end          (16.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_164
+    {
+        type         face;
+        axis         y;
+        start        (16.5 -0.3 0.05);
+        end          (16.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_165
+    {
+        type         face;
+        axis         y;
+        start        (16.6 -0.3 0.05);
+        end          (16.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_166
+    {
+        type         face;
+        axis         y;
+        start        (16.7 -0.3 0.05);
+        end          (16.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_167
+    {
+        type         face;
+        axis         y;
+        start        (16.8 -0.3 0.05);
+        end          (16.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_168
+    {
+        type         face;
+        axis         y;
+        start        (16.9 -0.3 0.05);
+        end          (16.9 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_169
+    {
+        type         face;
+        axis         y;
+        start        (17 -0.3 0.05);
+        end          (17 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_170
+    {
+        type         face;
+        axis         y;
+        start        (17.1 -0.3 0.05);
+        end          (17.1 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_171
+    {
+        type         face;
+        axis         y;
+        start        (17.2 -0.3 0.05);
+        end          (17.2 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_172
+    {
+        type         face;
+        axis         y;
+        start        (17.3 -0.3 0.05);
+        end          (17.3 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_173
+    {
+        type         face;
+        axis         y;
+        start        (17.4 -0.3 0.05);
+        end          (17.4 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_174
+    {
+        type         face;
+        axis         y;
+        start        (17.5 -0.3 0.05);
+        end          (17.5 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_175
+    {
+        type         face;
+        axis         y;
+        start        (17.6 -0.3 0.05);
+        end          (17.6 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_176
+    {
+        type         face;
+        axis         y;
+        start        (17.7 -0.3 0.05);
+        end          (17.7 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_177
+    {
+        type         face;
+        axis         y;
+        start        (17.8 -0.3 0.05);
+        end          (17.8 0.15 0.05);
+        nPoints      100;
+    }
+
+    gauge_178
+    {
+        type         face;
+        axis         y;
+        start        (17.9 -0.3 0.05);
+        end          (17.9 0.15 0.05);
+        nPoints      100;
+    }
+
+);
