@@ -6,7 +6,7 @@ echo
 git status
 
 # git pull 
-ehco "fetch and update to remote repository"
+echo "fetch and update to remote repository...."
 git pull
 
 echo "if no change please input Y,else input N"
