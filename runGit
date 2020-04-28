@@ -4,9 +4,14 @@ date
 echo            
 #git status
 git status
+
+# git pull 
+ehco "fetch and update to remote repository"
+git pull
+
 echo "if no change please input Y,else input N"
 read abool
-if [abool=Y]
+if [abool="Y"]
 then
 	echo "no change to add so shell break out"
 	exit
