@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# set local_file [lindex $argv 0]
+# set remote_path [lindex $argv 1]
+project=$(pwd |cut -d / -f 4-)
+echo "Current work path: "
+echo "      "$project
+echo "Remote_path:"
+echo "      "$HOMESSH'/home/Data/myj/'$project
+echo "    Info: this tool only use for remote and locate project has the same path"
+# echo $*
+scp $* $HOMESSH'/home/Data/myj/'$project
